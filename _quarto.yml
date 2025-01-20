@@ -1,20 +1,21 @@
 project:
-  type: website
+  type: book
+  output-dir: docs
 
-website:
+book:
   title: "biol827_biological_statistics"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
+  author: "UNK Biology"
+  date: "20 January 2025"
+  chapters:
+      - index.qmd
       - about.qmd
       - module1.qmd
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
-    toc: true
+    theme: flatly
+  pdf:
+    documentclass: scrreprt
 
 editor: visual
 
