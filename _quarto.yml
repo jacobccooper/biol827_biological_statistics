@@ -10,6 +10,7 @@ book:
       - index.qmd
       - about.qmd
       - module1.qmd
+      - module2.qmd
       - module3_4.qmd
 
 format:

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "biol827_biological_statistics",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
+    "text": "Welcome to BIOL827: Biological Statistics! This class is designed to introduce you to statistics while also teaching you important skills related to programming. This website is designed to accompany the course and improve folks’ abilities to complete module problemsets. Please email your instructor with any questions.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>biol827_biological_statistics</span>"
     ]
@@ -180,13 +180,123 @@
     ]
   },
   {
+    "objectID": "module2.html",
+    "href": "module2.html",
+    "title": "4  Module 2 Problemset",
+    "section": "",
+    "text": "5 Learning objectives:\nTo continue gaining familiarity with the R statistical framework by using RStudio to:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#dataset",
+    "href": "module2.html#dataset",
+    "title": "4  Module 2 Problemset",
+    "section": "6.1 Dataset",
+    "text": "6.1 Dataset\nA researcher was conducting an exercise physiology study. The research team wanted to know whether volunteers of different sexes (female, male, non-binary) differed in physical characteristics, especially Body Mass Index (BMI). For each volunteer, the research team recorded their weight (in kilograms, kg) and height (in meters, m) of each participant.\n\nBIOL827.02_Problem_Set_Data.csv",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#a.-calculate-descriptive-statistics",
+    "href": "module2.html#a.-calculate-descriptive-statistics",
+    "title": "4  Module 2 Problemset",
+    "section": "7.1 A. Calculate descriptive statistics",
+    "text": "7.1 A. Calculate descriptive statistics\nDescriptive statistics refers to simple calculations that summarize or describe a given variable, such as the mean (i.e., average, \\(\\mu\\), \\(\\bar{x}\\)), measures of variation in the data (standard deviation [\\(\\sigma\\), \\(s\\)], variation, etc.), and spread (minimum, maximum, range, etc.). These values are also one of the tools we can use as part of quality assurance and quality control.\n\nTo calculate the mean of the Weight.kg variable over all sample units, use mean(Data$Weight.kg). This tells R to calculate the mean from observations of the Weight.kg variable within the Data dataframe.\n\n\nmean(): calls the mean function.\nData: this is the name of the dataframe in which the data to be averaged are stored.\n$: separates an object name from the variable name. The named variable must exist within the named object or you will receive an error from RStudio.\nWeight.kg: identifies the variable in Data from which the average is to be calculated. A variable with this name must exist within the dataframe identified.\n\n\n# view data file - first rows ONLY\nhead(Data)\n\n# A tibble: 6 × 4\n  Participant Sex    Weight.kg Height.m\n        &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt;\n1          16 Female      61.8     1.87\n2          20 Female      64.2     1.89\n3          29 Female      64.7     1.76\n4          28 Female      67.6     1.86\n5           5 Female      71.2     1.96\n6           7 Female      72.5     1.8 \n\n\n\nmean(Data$Weight.kg)\n\n[1] 78.929\n\n\nWe will need to round values for our assignments.\n\nround: rounds values to a certain number of decimal places. Format is round(Data, decimals).\n%&gt;%: “is passed through”. The answer from the previous command is put into the next command automatically, and does not need to be declared. This makes coding easier. round(mean(Data$Weight.kg), 2) is the same as mean(Data$Weight.kg) %&gt;% round(2). This helps make things easier to follow when lots of commands are used in a row.\n\n\n# round to significant figures\nmean(Data$Weight.kg) %&gt;% # get the mean\n  round(2) # round to two decimals\n\n[1] 78.93\n\n\n\nTo calculate the standard deviation of the Weight.kg variable over all sample units, use sd(Data$Weight.kg). The syntax is similar to the mean() function.\n\n\nsd(Data$Weight.kg)\n\n[1] 16.60132\n\n\n\n# round to two decimal places\nsd(Data$Weight.kg) %&gt;% \n  round(2)\n\n[1] 16.6",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#b.-install-an-r-add-on-package",
+    "href": "module2.html#b.-install-an-r-add-on-package",
+    "title": "4  Module 2 Problemset",
+    "section": "7.2 B. Install an R add-on package",
+    "text": "7.2 B. Install an R add-on package\nAdd-on packages only need to be installed one time. They do not need to be installed each time you open RStudio, but packages do have to be activated each time you open RStudio. Packages only need to be re-installed when the package developer releases an updated version; you will usually receive a prompt in RStudio if/when a package needs to be reinstalled.\nThe add-on package pastecs contains a very handy function to create a large set of descriptive statistics all at once. There are other packages that also can calculate sets of descriptive statistics, but this is the best one I have found to date. Although there is a command-line function for installing packages, this generally only needs to be done once so I prefer to use the installation wizard rather than building it into my script.\n\nType the following into your R coding pane. DO NOT put this into your main coding document; your code will not run if it is constantly asked to install things.\nEnter the following text:\n\n\ninstall.packages(\"pastecs\", dependencies = TRUE)\n\n\nPackage must be in quotes \" \".\ndependencies = TRUE ensures any other needed packages are also installed.\n\n\nAfter running the code, you should see a lot of output in the code window. Don’t panic. It is installing a lot. You may be prompted to install extra things or create a new folder; just say “Yes”. See below for an example output from an re-install:\n\ntrying URL 'https://cran.rstudio.com/bin/macosx/big-sur-arm64/contrib/4.4/pastecs_1.4.2.tgz'\nContent type 'application/x-gzip' length 487644 bytes (476 KB)\n==================================================\ndownloaded 476 KB\n\n\nThe downloaded binary packages are in\n    /var/folders/gc/0jz_0k0j2qq75h6ynd6jtb_5xh27x8/T//Rtmp1kkunq/downloaded_packages\n\nAlternatively, you an go to the “Packages” tab in the plot pane (bottom right) and find pastecs there for installation.\n\n11. Whichever method is chosen, you can check installation (and find the citation!) by typing the following:\n\ncitation(\"pastecs\")\n\nTo cite package 'pastecs' in publications use:\n\n  Grosjean P, Ibanez F (2024). _pastecs: Package for Analysis of\n  Space-Time Ecological Series_. R package version 1.4.2,\n  &lt;https://CRAN.R-project.org/package=pastecs&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {pastecs: Package for Analysis of Space-Time Ecological Series},\n    author = {Philippe Grosjean and Frederic Ibanez},\n    year = {2024},\n    note = {R package version 1.4.2},\n    url = {https://CRAN.R-project.org/package=pastecs},\n  }",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#c.-activate-an-add-on-package",
+    "href": "module2.html#c.-activate-an-add-on-package",
+    "title": "4  Module 2 Problemset",
+    "section": "7.3 C. Activate an add-on package",
+    "text": "7.3 C. Activate an add-on package\nAn add-on package must be installed before it can be activated (B. Install an R add-on package). Although installation only needs to be done once until a major update is made, you must activate each time you open RStudio.\n\nIn the source pane, run the code library(pastecs).\n\n\nlibrary(pastecs)\n\n\nAttaching package: 'pastecs'\n\n\nThe following objects are masked from 'package:dplyr':\n\n    first, last\n\n\nThe following object is masked from 'package:tidyr':\n\n    extract\n\n\nNote there are masked warnings. This means that the computer has two commands with the same name for the same package. Imagine if you will the word “solar”. In English, this pertains to things related to the sun, but in Spanish this refers to the ground or land. Thus, the computer may assume which one is meant, but this could result in a nonsensical command. Thus, if you have a conflict, you can fix it by designating the package, in this case, English::solar and Spanish::solar. We will try to let you know if a conflict like this will arise!\n\nThat’s it! You’ve now got all the additional functions included in this package at your fingertips. So, let’s see what it can do!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#d.-use-function-stat.desc-to-calculate-descriptive-statistics",
+    "href": "module2.html#d.-use-function-stat.desc-to-calculate-descriptive-statistics",
+    "title": "4  Module 2 Problemset",
+    "section": "7.4 D. Use function stat.desc to calculate descriptive statistics",
+    "text": "7.4 D. Use function stat.desc to calculate descriptive statistics\nA useful function provided in the pastecs package is stat.desc() which can return a large set of descriptive statistics quickly and with ease.\n\n7.4.1 D.1. Commands on a single variable\n\nEnter an object.name &lt;- before your stat.desc command. The object name can be of your choosing, this is where output from the stat.desc() function will be stored.\n\n15. Enter and run the function stat.desc(Data$Weight.kg).\n\nstat.desc(): this calls the stat.desc function; all arguments must be made inside these parentheses.\nData: this is the name of the existing dataframe containing the variable to be described.\n$Weight.kg: indicates the variable to be summarized.\n\n\nweight_stats &lt;- stat.desc(Data$Weight.kg)\n\nprint(weight_stats)\n\n     nbr.val     nbr.null       nbr.na          min          max        range \n  30.0000000    0.0000000    0.0000000   51.3200000  118.3100000   66.9900000 \n         sum       median         mean      SE.mean CI.mean.0.95          var \n2367.8700000   73.6750000   78.9290000    3.0309730    6.1990358  275.6039197 \n     std.dev     coef.var \n  16.6013228    0.2103324 \n\n\nWithin stat.desc, there are multiple options. The defaults are:\n\nbasic = TRUE: Return basic statistics on dataset size? TRUE = Yes.\ndesc = TRUE: Return basic statistics describing the data themselves? TRUE = Yes.\nnorm = FALSE: Return normal distribution statistics related to the data? Things like skewness etc. FALSE = No.\np = 0.95: What confidence level should we use? Default is 95%.\nThis is based on code by Frédéric Ibanez & Philippe Grosjean; type ?stat.desc into your bottom left pane to learn more about it.\n\n\n\n\n\n\n\n\nAbbreviation\nMeaning\n\n\n\n\nnbr.val\nNumber of observations containing a number value.\n\n\nn\nSample size.\n\n\nmedian\nMedian value among all observations. Half of values are lower and half of values are higher than this value.\n\n\nnbr.null\nNumber of empty observations mean Mean value across all observations.\n\n\nnrb.na\nNumber of observations for which data were identified as missing (NA).\n\n\nse.mean\nStandard error relative to the mean across all observations. Interpret as mean \\(\\pm\\) se.mean.\n\n\nmin\nMinimum value across all observations.\n\n\nci.mean.0.95\n95% confidence interval relative to the mean across all observations (i.e., margin of error). Interpret as mean ci.mean.0.95.\n\n\nmax\nMaximum value across all observations.\n\n\nvar\nVariance across all observations.\n\n\nrange\nRange (maximum – minimum) of values across all observations.\n\n\nstd.dev\nStandard deviation relative to the mean across all observations. Interpret as mean \\(\\pm\\) st.dev.\n\n\nsum\nSum of values across all observations.\n\n\ncoef.var\nCoefficient of variation.\n\n\n\nKeep in mind that we also have a few different ways to define columns to be selected. For example:\n\nData$Participant\n\n [1] 16 20 29 28  5  7  1 14 13 22 26 30  9 24 11 15 19  4 23  8  3  6 27 25 21\n[26] 12 17 10  2 18\n\n\nAbove we have returned the data for a single column. But what about multiple columns?\n\nData %&gt;% \n  select(Participant, Sex) # column names\n\n# A tibble: 30 × 2\n   Participant Sex   \n         &lt;dbl&gt; &lt;chr&gt; \n 1          16 Female\n 2          20 Female\n 3          29 Female\n 4          28 Female\n 5           5 Female\n 6           7 Female\n 7           1 Female\n 8          14 Female\n 9          13 Female\n10          22 Female\n# ℹ 20 more rows\n\n\n\nData[ , c(\"Participant\", \"Sex\")]\n\n# A tibble: 30 × 2\n   Participant Sex   \n         &lt;dbl&gt; &lt;chr&gt; \n 1          16 Female\n 2          20 Female\n 3          29 Female\n 4          28 Female\n 5           5 Female\n 6           7 Female\n 7           1 Female\n 8          14 Female\n 9          13 Female\n10          22 Female\n# ℹ 20 more rows\n\n\nAs we can see above, both methods subset the data similarly.\n\nTo view contents of the object in the console panel, highlight or type the object name and click Run or hit CTRL + Enter (Linux, Windows) or CMD + ENTER (Mac).\n\n\nweight_stats\n\n     nbr.val     nbr.null       nbr.na          min          max        range \n  30.0000000    0.0000000    0.0000000   51.3200000  118.3100000   66.9900000 \n         sum       median         mean      SE.mean CI.mean.0.95          var \n2367.8700000   73.6750000   78.9290000    3.0309730    6.1990358  275.6039197 \n     std.dev     coef.var \n  16.6013228    0.2103324 \n\n\n\nRepeat steps 17 through 20 to run the stat.desc function for the Height.m variable\n\n\n\n7.4.2 D.2. Multiple variables in one command\nWe can also use stat.desc() to calculate descriptive statistics for more than one variable at a time.\n\nEnter an object.name &lt;-. The object name can be of your choosing that will store output from the stat.desc() function.\n\n\n\nEnter the function stat.desc(Data[, c(\"Weight.kg\", \"Height.m\")]).\n\n\nstat.desc(): this calls the stat.desc function; all arguments must be made inside these parentheses.\nData: this is the name of the existing dataframe containing the variables to be described.\n[, c(\"variable1\", \"variable2\")]: similar to the syntax for the subset function (Module 1 Problem Set), we can use hard brackets to specify a group of observations and/or variables on which to run the function. Because we want to run the function on all observations, we use a comma after the first hard bracket. Next, we can use the list function c() as we did with the subset function in Module 1 Problem Set to identify all the variables we want summarized.\n\n\nHighlight the command and click Run. To view contents of the object in the console panel, highlight or type the object name and click Run. You can also use your keyboard shortcuts.\n\n\nmulticol_stats &lt;- stat.desc(Data[, c(\"Weight.kg\", \"Height.m\")])\n\nmulticol_stats\n\n                Weight.kg     Height.m\nnbr.val        30.0000000 30.000000000\nnbr.null        0.0000000  0.000000000\nnbr.na          0.0000000  0.000000000\nmin            51.3200000  1.700000000\nmax           118.3100000  1.970000000\nrange          66.9900000  0.270000000\nsum          2367.8700000 55.140000000\nmedian         73.6750000  1.815000000\nmean           78.9290000  1.838000000\nSE.mean         3.0309730  0.012405042\nCI.mean.0.95    6.1990358  0.025371159\nvar           275.6039197  0.004616552\nstd.dev        16.6013228  0.067945211\ncoef.var        0.2103324  0.036966927\n\n\n\n\n7.4.3 D.3. Calculate descriptive statistics for only one group of observations\nWe need to calculate descriptive statistics separately for each sample. There are different ways to do this in RStudio. This is where tidyverse pipelines come in handy!\nIn this dataset, we need to run descriptive statistics separately for each sex group (female, male, non-binary). Here, we will demonstrate the process for the non-binary sample.\n\nBegin the command by providing an object.name &lt;- for the new dataframe you will create. You can use an object name of your choosing.\nWe are going to use a pipeline %&gt;% series of commands. These will:\n\n\nStart with the Data object\nPass this through a filter command to select only certain data\n\nRemember - == means “is exactly equal to”\n\nPass this through a select command to remove non-numeric columns\nPass this through stat.desc to get our stats information.\n\n\nRun the command below. To view contents of the new dataframe in the console panel, highlight or type the new dataframe name and click Run or use your shortcuts.\n\n\nData %&gt;%                          # start with dataset\n  filter(Sex == \"Female\") %&gt;%     # select females\n  select(-Participant, -Sex) %&gt;%  # remove unneeded columns\n  stat.desc() %&gt;%                 # get stats\n  round(2)                        # round to two decimals\n\n             Weight.kg Height.m\nnbr.val          10.00    10.00\nnbr.null          0.00     0.00\nnbr.na            0.00     0.00\nmin              61.75     1.76\nmax              91.73     1.96\nrange            29.98     0.20\nsum             734.29    18.51\nmedian           71.85     1.86\nmean             73.43     1.85\nSE.mean           3.08     0.02\nCI.mean.0.95      6.97     0.05\nvar              95.03     0.00\nstd.dev           9.75     0.07\ncoef.var          0.13     0.04\n\n\n\nThere we go! We have been able to perform a series of complicated commands quickly, right in a row, by using the pipeline method. This allows us to see things step-by-step through the command, and to annotate appropriately.\nWe can save the above as an object by adding object.name &lt;- before the first Data.\n\n\nfemale_data &lt;- Data %&gt;%           # start with dataset\n  filter(Sex == \"Female\") %&gt;%     # select females\n  select(-Participant, -Sex) %&gt;%  # remove unneeded columns\n  stat.desc() %&gt;%                 # get stats\n  round(2)                        # round to two decimals\n\n26. To view this, just run female_data or use print(female_data).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#e.-create-a-new-variable",
+    "href": "module2.html#e.-create-a-new-variable",
+    "title": "4  Module 2 Problemset",
+    "section": "7.5 E. Create a new variable",
+    "text": "7.5 E. Create a new variable\nAlthough the research team recorded the height and weight of each participant, they are really interested in the Body Mass Index (BMI) profile of participants. We can have R calculate BMI and add it to the Data dataframe as a new variable. There are separate formulas for calculating BMI depending on whether weight and height are in metric units or in English units; BMI will be the same from either formula. The formula for BMI calculated from weight and height in metric units is:\n\\[\nBMI = \\frac{mass}{height^2}\n\\]\n\nIn this step, how we name our new object matters! We need to tell RStudio the dataframe in which to put the new variable and the name we want it to give to the new variable. Enter the object name as: Data$BMI &lt;-.\n\n\nData: This identifies the dataframe to which we want the new variable added; in our case, this is named Data.\n$: Tells R that what comes next is the name of the new variable.\nBMI: This is the name of the new variable to be added to existing dataframe Data.\n\n28. Next enter the mathematical formula (see BMI equation above) for calculating BMI with reference to weight and height variables in the existing dataframe Data: Data$Weight.kg/(Data$Height.m^2).\n\nThis is also an example of how we can use R as a calculator.\nWhen entering equations, it is best to always use parentheses to ensure the correct order of operations (e.g., PEDMAS). For example: BMI of participant 2:\n\nshould be \\(\\frac{125.64}{1.922^2} = \\frac{125.64}{3.69} = 34.08\\)\nshould not be \\(\\frac{125.64}{1.92}^2 = 65.44^2 = 4282.07\\)\n\n\n29. Highlight the command and click Run.\n30. To view contents of the dataframe ‘Data’ showing the BMI variable added, highlight or type the object name ‘Data’ and click Run (Fig. 7).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units.",
+    "href": "module2.html#points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units.",
+    "title": "4  Module 2 Problemset",
+    "section": "8.1 6. (6 points) Create new variables in the dataframe Data (or whatever object name you gave the imported *.csv file): weight and height in English units.",
+    "text": "8.1 6. (6 points) Create new variables in the dataframe Data (or whatever object name you gave the imported *.csv file): weight and height in English units.\n\n8.1.1 a. You will be asked to insert an image or screenshot of the dataframe showing they have been added and correctly calculated.\n\n\n8.1.2 b. Conversions:\n\nWeight: \\(1 kg = 2.20462 lbs\\)\nHeight: \\(39.3701in = 1m\\)\n\n\n\n8.1.3 c. Coding how-to:\n\nData$Weight.lbs: Data$Weight.kg*2.20462\nData$Height.in: Data$Height.m*39.3701",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary.",
+    "href": "module2.html#points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary.",
+    "title": "4  Module 2 Problemset",
+    "section": "8.2 7. (6 points) Use the stat.desc() function to calculate descriptive statistics for Height.in and Weight.lbs separately for each sample (Female, Male, NonBinary).",
+    "text": "8.2 7. (6 points) Use the stat.desc() function to calculate descriptive statistics for Height.in and Weight.lbs separately for each sample (Female, Male, NonBinary).\n\n8.2.1 a. You will be asked to insert an image or screenshot of the output from the RStudio console window in Canvas.\n\n\n8.2.2 b. Hint: You will need to use skills from both the Module 1 and Module 2 portions of the problem set to complete this task in RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any",
+    "href": "module2.html#points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any",
+    "title": "4  Module 2 Problemset",
+    "section": "8.3 8. (3 points) Look at your R scripts from Module 1 and Module 2 portions of this Problem Set. Evaluate how well you did or did not follow best practices for documenting your workflows. Briefly discuss improvements that could be made to the way you document your analysis workflow in future problem sets, if any?",
+    "text": "8.3 8. (3 points) Look at your R scripts from Module 1 and Module 2 portions of this Problem Set. Evaluate how well you did or did not follow best practices for documenting your workflows. Briefly discuss improvements that could be made to the way you document your analysis workflow in future problem sets, if any?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
+    "objectID": "module2.html#create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated",
+    "href": "module2.html#create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated",
+    "title": "4  Module 2 Problemset",
+    "section": "9.1 9. Create a histogram for each of the following variables in the sample indicated:",
+    "text": "9.1 9. Create a histogram for each of the following variables in the sample indicated:\n\nFemale Weight.lbs\nMale Height.in\nNon-binary BMI\n\nCompare the histogram to the mean and median of the respective sample calculated using the stat.desc function for question 5 above. How, if at all, does the histogram illustrate the relationship of the mean to the median of that sample?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Module 2 Problemset</span>"
+    ]
+  },
+  {
     "objectID": "module3_4.html",
     "href": "module3_4.html",
-    "title": "4  Modules 3 & 4: Describing data, Uncertainty, and Probability",
+    "title": "5  Modules 3 & 4: Describing data, Uncertainty, and Probability",
     "section": "",
-    "text": "5 Needs to be reformatted.",
+    "text": "6 Needs to be reformatted.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modules 3 & 4: Describing data, Uncertainty, and Probability</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modules 3 & 4: Describing data, Uncertainty, and Probability</span>"
     ]
   }
 ]

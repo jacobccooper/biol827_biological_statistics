@@ -2,10 +2,4 @@
 title: "biol827_biological_statistics"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+Welcome to BIOL827: Biological Statistics! This class is designed to introduce you to statistics while also teaching you important skills related to programming. This website is designed to accompany the course and improve folks' abilities to complete module problemsets. Please email your instructor with any questions.
