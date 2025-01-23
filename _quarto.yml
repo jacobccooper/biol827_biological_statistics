@@ -8,7 +8,6 @@ book:
   date: "20 January 2025"
   chapters:
       - index.qmd
-      - about.qmd
       - module1.qmd
       - module2.qmd
       - module3_4.qmd

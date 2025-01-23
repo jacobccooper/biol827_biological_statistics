@@ -1,5 +1,5 @@
 ---
-title: "Introduction to statistics"
+title: "Module 1"
 author: "University of Nebraska at Kearney Biology Department"
 format: html
 editor: visual

@@ -8,7 +8,7 @@
 
 <meta name="author" content="University of Nebraska at Kearney Biology Department">
 
-<title>3&nbsp; Introduction to statistics – biol827_biological_statistics</title>
+<title>2&nbsp; Module 1 – biol827_biological_statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./module2.html" rel="next">
-<link href="./about.html" rel="prev">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./module1.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to statistics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./module1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,26 +149,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./module1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Module 2 Problemset</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module3_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modules 3 &amp; 4: Describing data, Uncertainty, and Probability</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modules 3 &amp; 4: Describing data, Uncertainty, and Probability</span></span></a>
   </div>
 </li>
     </ul>
@@ -181,59 +175,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">4</span> Learning objectives:</a></li>
-  <li><a href="#before-beginning-the-walkthrough" id="toc-before-beginning-the-walkthrough" class="nav-link" data-scroll-target="#before-beginning-the-walkthrough"><span class="header-section-number">5</span> Before beginning the walkthrough</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">3</span> Learning objectives:</a></li>
+  <li><a href="#before-beginning-the-walkthrough" id="toc-before-beginning-the-walkthrough" class="nav-link" data-scroll-target="#before-beginning-the-walkthrough"><span class="header-section-number">4</span> Before beginning the walkthrough</a>
   <ul class="collapse">
-  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link" data-scroll-target="#installing-r-and-rstudio"><span class="header-section-number">5.1</span> Installing <em>R</em> and <em>RStudio</em></a></li>
-  <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes"><span class="header-section-number">5.2</span> Important notes</a>
+  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link" data-scroll-target="#installing-r-and-rstudio"><span class="header-section-number">4.1</span> Installing <em>R</em> and <em>RStudio</em></a></li>
+  <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes"><span class="header-section-number">4.2</span> Important notes</a>
   <ul class="collapse">
-  <li><a href="#notes-on-formatting" id="toc-notes-on-formatting" class="nav-link" data-scroll-target="#notes-on-formatting"><span class="header-section-number">5.2.1</span> Notes on formatting</a></li>
-  <li><a href="#tab-completing" id="toc-tab-completing" class="nav-link" data-scroll-target="#tab-completing"><span class="header-section-number">5.2.2</span> Tab completing</a></li>
-  <li><a href="#file-naming" id="toc-file-naming" class="nav-link" data-scroll-target="#file-naming"><span class="header-section-number">5.2.3</span> File naming</a></li>
-  <li><a href="#taking-notes-in-r" id="toc-taking-notes-in-r" class="nav-link" data-scroll-target="#taking-notes-in-r"><span class="header-section-number">5.2.4</span> Taking notes in <em>R</em></a></li>
+  <li><a href="#notes-on-formatting" id="toc-notes-on-formatting" class="nav-link" data-scroll-target="#notes-on-formatting"><span class="header-section-number">4.2.1</span> Notes on formatting</a></li>
+  <li><a href="#tab-completing" id="toc-tab-completing" class="nav-link" data-scroll-target="#tab-completing"><span class="header-section-number">4.2.2</span> Tab completing</a></li>
+  <li><a href="#file-naming" id="toc-file-naming" class="nav-link" data-scroll-target="#file-naming"><span class="header-section-number">4.2.3</span> File naming</a></li>
+  <li><a href="#taking-notes-in-r" id="toc-taking-notes-in-r" class="nav-link" data-scroll-target="#taking-notes-in-r"><span class="header-section-number">4.2.4</span> Taking notes in <em>R</em></a></li>
   </ul></li>
-  <li><a href="#getting-help-inside-r" id="toc-getting-help-inside-r" class="nav-link" data-scroll-target="#getting-help-inside-r"><span class="header-section-number">5.3</span> Getting help inside <em>R</em></a></li>
+  <li><a href="#getting-help-inside-r" id="toc-getting-help-inside-r" class="nav-link" data-scroll-target="#getting-help-inside-r"><span class="header-section-number">4.3</span> Getting help inside <em>R</em></a></li>
   </ul></li>
-  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">6</span> Datasets:</a>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">5</span> Datasets:</a>
   <ul class="collapse">
-  <li><a href="#dataset-1" id="toc-dataset-1" class="nav-link" data-scroll-target="#dataset-1"><span class="header-section-number">6.1</span> Dataset 1</a></li>
-  <li><a href="#dataset-2" id="toc-dataset-2" class="nav-link" data-scroll-target="#dataset-2"><span class="header-section-number">6.2</span> Dataset 2</a></li>
+  <li><a href="#dataset-1" id="toc-dataset-1" class="nav-link" data-scroll-target="#dataset-1"><span class="header-section-number">5.1</span> Dataset 1</a></li>
+  <li><a href="#dataset-2" id="toc-dataset-2" class="nav-link" data-scroll-target="#dataset-2"><span class="header-section-number">5.2</span> Dataset 2</a></li>
   </ul></li>
-  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure"><span class="header-section-number">7</span> Procedure:</a>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure"><span class="header-section-number">6</span> Procedure:</a>
   <ul class="collapse">
-  <li><a href="#section-a.-set-a-working-directory" id="toc-section-a.-set-a-working-directory" class="nav-link" data-scroll-target="#section-a.-set-a-working-directory"><span class="header-section-number">7.1</span> Section A. Set a working directory</a></li>
-  <li><a href="#section-b.-import-a-dataset" id="toc-section-b.-import-a-dataset" class="nav-link" data-scroll-target="#section-b.-import-a-dataset"><span class="header-section-number">7.2</span> Section B. Import a dataset</a></li>
-  <li><a href="#section-c.-subset-a-dataframe" id="toc-section-c.-subset-a-dataframe" class="nav-link" data-scroll-target="#section-c.-subset-a-dataframe"><span class="header-section-number">7.3</span> Section C. Subset a dataframe</a>
+  <li><a href="#section-a.-set-a-working-directory" id="toc-section-a.-set-a-working-directory" class="nav-link" data-scroll-target="#section-a.-set-a-working-directory"><span class="header-section-number">6.1</span> Section A. Set a working directory</a></li>
+  <li><a href="#section-b.-import-a-dataset" id="toc-section-b.-import-a-dataset" class="nav-link" data-scroll-target="#section-b.-import-a-dataset"><span class="header-section-number">6.2</span> Section B. Import a dataset</a></li>
+  <li><a href="#section-c.-subset-a-dataframe" id="toc-section-c.-subset-a-dataframe" class="nav-link" data-scroll-target="#section-c.-subset-a-dataframe"><span class="header-section-number">6.3</span> Section C. Subset a dataframe</a>
   <ul class="collapse">
-  <li><a href="#section-c.1.-subset-by-columns" id="toc-section-c.1.-subset-by-columns" class="nav-link" data-scroll-target="#section-c.1.-subset-by-columns"><span class="header-section-number">7.3.1</span> Section C.1. Subset by columns</a></li>
-  <li><a href="#section-c.2.-subset-observations-only" id="toc-section-c.2.-subset-observations-only" class="nav-link" data-scroll-target="#section-c.2.-subset-observations-only"><span class="header-section-number">7.3.2</span> Section C.2. Subset observations only</a></li>
-  <li><a href="#section-c.3.-subset-by-both-variables-and-observations" id="toc-section-c.3.-subset-by-both-variables-and-observations" class="nav-link" data-scroll-target="#section-c.3.-subset-by-both-variables-and-observations"><span class="header-section-number">7.3.3</span> Section C.3. Subset by both variables and observations</a></li>
+  <li><a href="#section-c.1.-subset-by-columns" id="toc-section-c.1.-subset-by-columns" class="nav-link" data-scroll-target="#section-c.1.-subset-by-columns"><span class="header-section-number">6.3.1</span> Section C.1. Subset by columns</a></li>
+  <li><a href="#section-c.2.-subset-observations-only" id="toc-section-c.2.-subset-observations-only" class="nav-link" data-scroll-target="#section-c.2.-subset-observations-only"><span class="header-section-number">6.3.2</span> Section C.2. Subset observations only</a></li>
+  <li><a href="#section-c.3.-subset-by-both-variables-and-observations" id="toc-section-c.3.-subset-by-both-variables-and-observations" class="nav-link" data-scroll-target="#section-c.3.-subset-by-both-variables-and-observations"><span class="header-section-number">6.3.3</span> Section C.3. Subset by both variables and observations</a></li>
   </ul></li>
-  <li><a href="#section-d.-create-frequency-histograms" id="toc-section-d.-create-frequency-histograms" class="nav-link" data-scroll-target="#section-d.-create-frequency-histograms"><span class="header-section-number">7.4</span> Section D. Create frequency histograms</a></li>
+  <li><a href="#section-d.-create-frequency-histograms" id="toc-section-d.-create-frequency-histograms" class="nav-link" data-scroll-target="#section-d.-create-frequency-histograms"><span class="header-section-number">6.4</span> Section D. Create frequency histograms</a></li>
   </ul></li>
-  <li><a href="#problem-set-assignment-directions-and-questions" id="toc-problem-set-assignment-directions-and-questions" class="nav-link" data-scroll-target="#problem-set-assignment-directions-and-questions"><span class="header-section-number">8</span> Problem Set Assignment Directions and Questions:</a>
+  <li><a href="#problem-set-assignment-directions-and-questions" id="toc-problem-set-assignment-directions-and-questions" class="nav-link" data-scroll-target="#problem-set-assignment-directions-and-questions"><span class="header-section-number">7</span> Problem Set Assignment Directions and Questions:</a>
   <ul class="collapse">
-  <li><a href="#points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following." id="toc-points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following." class="nav-link" data-scroll-target="#points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following."><span class="header-section-number">8.1</span> 1. (2 points) In Dataset 1, identify which variable is the response variable and which isthe explanatory variable as well as what type of data each represents (categoricalnominal, categorical ordinal, numeric discrete, numeric continuous). In Canvas, therewill be dropdowns for you to use to identify the type of variable and the type of dataassociated with each of the following.</a>
+  <li><a href="#points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following." id="toc-points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following." class="nav-link" data-scroll-target="#points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following."><span class="header-section-number">7.1</span> 1. (2 points) In Dataset 1, identify which variable is the response variable and which isthe explanatory variable as well as what type of data each represents (categoricalnominal, categorical ordinal, numeric discrete, numeric continuous). In Canvas, therewill be dropdowns for you to use to identify the type of variable and the type of dataassociated with each of the following.</a>
   <ul class="collapse">
-  <li><a href="#a.-sun-exposure-sunexp" id="toc-a.-sun-exposure-sunexp" class="nav-link" data-scroll-target="#a.-sun-exposure-sunexp"><span class="header-section-number">8.1.1</span> a. Sun exposure (SunExp)?</a></li>
-  <li><a href="#b.-freckles-freckles" id="toc-b.-freckles-freckles" class="nav-link" data-scroll-target="#b.-freckles-freckles"><span class="header-section-number">8.1.2</span> b. Freckles (Freckles)?</a></li>
+  <li><a href="#a.-sun-exposure-sunexp" id="toc-a.-sun-exposure-sunexp" class="nav-link" data-scroll-target="#a.-sun-exposure-sunexp"><span class="header-section-number">7.1.1</span> a. Sun exposure (SunExp)?</a></li>
+  <li><a href="#b.-freckles-freckles" id="toc-b.-freckles-freckles" class="nav-link" data-scroll-target="#b.-freckles-freckles"><span class="header-section-number">7.1.2</span> b. Freckles (Freckles)?</a></li>
   </ul></li>
-  <li><a href="#points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." id="toc-points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="nav-link" data-scroll-target="#points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">8.2</span> 2. (2 points) In Dataset 2, identify which variable is the response variable and which is the explanatory variable as well as what type of data each represents (categorical nominal, categorical ordinal, numeric discrete, numeric continuous). In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</a>
+  <li><a href="#points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." id="toc-points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="nav-link" data-scroll-target="#points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">7.2</span> 2. (2 points) In Dataset 2, identify which variable is the response variable and which is the explanatory variable as well as what type of data each represents (categorical nominal, categorical ordinal, numeric discrete, numeric continuous). In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</a>
   <ul class="collapse">
-  <li><a href="#a.-sun-exposure-sunexp-1" id="toc-a.-sun-exposure-sunexp-1" class="nav-link" data-scroll-target="#a.-sun-exposure-sunexp-1"><span class="header-section-number">8.2.1</span> a. Sun exposure (SunExp)?</a></li>
-  <li><a href="#b.-freckles-freckles-1" id="toc-b.-freckles-freckles-1" class="nav-link" data-scroll-target="#b.-freckles-freckles-1"><span class="header-section-number">8.2.2</span> b. Freckles (Freckles)?</a></li>
+  <li><a href="#a.-sun-exposure-sunexp-1" id="toc-a.-sun-exposure-sunexp-1" class="nav-link" data-scroll-target="#a.-sun-exposure-sunexp-1"><span class="header-section-number">7.2.1</span> a. Sun exposure (SunExp)?</a></li>
+  <li><a href="#b.-freckles-freckles-1" id="toc-b.-freckles-freckles-1" class="nav-link" data-scroll-target="#b.-freckles-freckles-1"><span class="header-section-number">7.2.2</span> b. Freckles (Freckles)?</a></li>
   </ul></li>
-  <li><a href="#points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." id="toc-points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="nav-link" data-scroll-target="#points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">8.3</span> 3. (2 points) Based on descriptions of the studies associated with each dataset, answer the following questions. In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</a>
+  <li><a href="#points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." id="toc-points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="nav-link" data-scroll-target="#points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">7.3</span> 3. (2 points) Based on descriptions of the studies associated with each dataset, answer the following questions. In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</a>
   <ul class="collapse">
-  <li><a href="#a.-was-dataset-1-associated-with-an-observational-or-experimental-study" id="toc-a.-was-dataset-1-associated-with-an-observational-or-experimental-study" class="nav-link" data-scroll-target="#a.-was-dataset-1-associated-with-an-observational-or-experimental-study"><span class="header-section-number">8.3.1</span> a. Was Dataset 1 associated with an observational or experimental study?</a></li>
-  <li><a href="#b.-was-dataset-2-associated-with-an-observational-or-experimental-study" id="toc-b.-was-dataset-2-associated-with-an-observational-or-experimental-study" class="nav-link" data-scroll-target="#b.-was-dataset-2-associated-with-an-observational-or-experimental-study"><span class="header-section-number">8.3.2</span> b. Was Dataset 2 associated with an observational or experimental study?</a></li>
+  <li><a href="#a.-was-dataset-1-associated-with-an-observational-or-experimental-study" id="toc-a.-was-dataset-1-associated-with-an-observational-or-experimental-study" class="nav-link" data-scroll-target="#a.-was-dataset-1-associated-with-an-observational-or-experimental-study"><span class="header-section-number">7.3.1</span> a. Was Dataset 1 associated with an observational or experimental study?</a></li>
+  <li><a href="#b.-was-dataset-2-associated-with-an-observational-or-experimental-study" id="toc-b.-was-dataset-2-associated-with-an-observational-or-experimental-study" class="nav-link" data-scroll-target="#b.-was-dataset-2-associated-with-an-observational-or-experimental-study"><span class="header-section-number">7.3.2</span> b. Was Dataset 2 associated with an observational or experimental study?</a></li>
   </ul></li>
-  <li><a href="#points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas." id="toc-points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas." class="nav-link" data-scroll-target="#points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas."><span class="header-section-number">8.4</span> 4. (6 points) Using Dataset 2, create one histogram of freckles data for participants exposed to 1 hour of sun daily and another for freckles of participants exposed to 3 hours of sun daily. You will be asked to paste screenshots or insert images of both histograms in Canvas.</a>
+  <li><a href="#points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas." id="toc-points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas." class="nav-link" data-scroll-target="#points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas."><span class="header-section-number">7.4</span> 4. (6 points) Using Dataset 2, create one histogram of freckles data for participants exposed to 1 hour of sun daily and another for freckles of participants exposed to 3 hours of sun daily. You will be asked to paste screenshots or insert images of both histograms in Canvas.</a>
   <ul class="collapse">
-  <li><a href="#a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually." id="toc-a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually." class="nav-link" data-scroll-target="#a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually."><span class="header-section-number">8.4.1</span> a. To do this, you will first need to create a subset of each SunExp sample (1 hour subset, 3 hour subset). Then, create a histogram for each individually.</a></li>
+  <li><a href="#a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually." id="toc-a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually." class="nav-link" data-scroll-target="#a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually."><span class="header-section-number">7.4.1</span> a. To do this, you will first need to create a subset of each SunExp sample (1 hour subset, 3 hour subset). Then, create a histogram for each individually.</a></li>
   </ul></li>
-  <li><a href="#points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." id="toc-points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="nav-link" data-scroll-target="#points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">8.5</span> 5. (4 points) Describe the distribution of each in terms of skewness (positive, negative, none/normal, or unclear) and kurtosis (positive/leptokurtic, negative/platykurtic, or neutral/mesokurtic, or unclear)? In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</a></li>
-  <li><a href="#for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output." id="toc-for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output." class="nav-link" data-scroll-target="#for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output."><span class="header-section-number">8.6</span> 6. For the possibility of partial credit, you will be able to upload a document showing your work (e.g., R code and output).</a></li>
+  <li><a href="#points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." id="toc-points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="nav-link" data-scroll-target="#points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">7.5</span> 5. (4 points) Describe the distribution of each in terms of skewness (positive, negative, none/normal, or unclear) and kurtosis (positive/leptokurtic, negative/platykurtic, or neutral/mesokurtic, or unclear)? In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</a></li>
+  <li><a href="#for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output." id="toc-for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output." class="nav-link" data-scroll-target="#for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output."><span class="header-section-number">7.6</span> 6. For the possibility of partial credit, you will be able to upload a document showing your work (e.g., R code and output).</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -243,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to statistics</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></h1>
 </div>
 
 
@@ -266,8 +260,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="learning-objectives" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Learning objectives:</h1>
+<section id="learning-objectives" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Learning objectives:</h1>
 <p>To reinforce Module 1 learning objectives and gain familiarity with the R statistical framework by using <em>RStudio</em> to:</p>
 <ul>
 <li><p>Set a working directory</p></li>
@@ -276,10 +270,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Create and evaluate a frequency histogram</p></li>
 </ul>
 </section>
-<section id="before-beginning-the-walkthrough" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Before beginning the walkthrough</h1>
-<section id="installing-r-and-rstudio" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">5.1</span> Installing <em>R</em> and <em>RStudio</em></h2>
+<section id="before-beginning-the-walkthrough" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Before beginning the walkthrough</h1>
+<section id="installing-r-and-rstudio" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="installing-r-and-rstudio"><span class="header-section-number">4.1</span> Installing <em>R</em> and <em>RStudio</em></h2>
 <p>If you have not already done so, install both of the following free software programs on your computer before beginning the problem set. If you are using a Mac OS, you <em>may</em> be prompted to also download and install <a href="https://www.xquartz.org/">XQuartz</a> (also free).</p>
 <ul>
 <li><p><em>R</em> – behind-the-scenes statistical brain - <a href="https://cloud.r-project.org/">download from <em>R</em> directly</a></p></li>
@@ -300,22 +294,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">[YOUR USER NAME]</span><span class="sc">\\</span><span class="st">Downloads"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="important-notes" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="important-notes"><span class="header-section-number">5.2</span> Important notes</h2>
-<section id="notes-on-formatting" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="notes-on-formatting"><span class="header-section-number">5.2.1</span> Notes on formatting</h3>
+<section id="important-notes" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="important-notes"><span class="header-section-number">4.2</span> Important notes</h2>
+<section id="notes-on-formatting" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="notes-on-formatting"><span class="header-section-number">4.2.1</span> Notes on formatting</h3>
 <p>Throughout these instruction documents, different formats will be used to denote what type of object or data we are talking about. For example, programs like <em>R</em> will be italicized, and things related to actual code or coding objects will be formatted <code>like code</code>. For example, if a dataset is talking about the number of birds and it has a column called “num_birds”, then I will make this clear by formatting it as <code>num_birds</code>. If we are talking about the mean of a dataset, I will use “mean”, but if I’m talking about the command it will be formatted as “<code>mean</code>”.</p>
 </section>
-<section id="tab-completing" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="tab-completing"><span class="header-section-number">5.2.2</span> Tab completing</h3>
+<section id="tab-completing" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="tab-completing"><span class="header-section-number">4.2.2</span> Tab completing</h3>
 <p><em>RStudio</em> allows you to do “tab completion”. Tab completion is a method that helps prevent you from making mistakes, especially as related to formatting or spelling. For example, if I hit one quote within a coding region in <em>R</em>, <em>RStudio</em> will automatically complete the quotes and place the cursor in the middle. (This is also true for parentheses, brackets, etc.) Quotes, in <em>R</em>, indicates that you will be putting in a filepath. Thus, if I type <code>"~/Dow"</code> and hit tab, my computer will autocomplete to <code>"~/Downloads/"</code>.</p>
 </section>
-<section id="file-naming" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="file-naming"><span class="header-section-number">5.2.3</span> File naming</h3>
+<section id="file-naming" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="file-naming"><span class="header-section-number">4.2.3</span> File naming</h3>
 <p>It is often common for folks to use spaces in their file names, like <code>bird data.csv</code>. However, different coding languages, such as <em>Bash</em> and <em>Python</em>, see spaces as a break between commands. For example, where <em>R</em> might see <code>bird data.csv</code> as a single file name, <em>Bash</em> would interpret this as perform the command <code>bird</code> on the object <code>data.csv</code>. Thus, it is <em>always</em> better to use underscores or dashes instead, such as <code>bird_data.csv</code>.</p>
 </section>
-<section id="taking-notes-in-r" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="taking-notes-in-r"><span class="header-section-number">5.2.4</span> Taking notes in <em>R</em></h3>
+<section id="taking-notes-in-r" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="taking-notes-in-r"><span class="header-section-number">4.2.4</span> Taking notes in <em>R</em></h3>
 <p>When writing code, it is important to take notes and document each step of what you are doing. In <em>R</em>, anything written after a <code>#</code> character is ignored. Thus, anything written after a <code>#</code> can be used as notes. Compare the following outputs:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -337,8 +331,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If you want to write a lot of notes, enter <code>#'</code> before typing notes. Every time you hit <code>enter</code>, the next line will start with <code>#'</code>.</p>
 </section>
 </section>
-<section id="getting-help-inside-r" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="getting-help-inside-r"><span class="header-section-number">5.3</span> Getting help inside <em>R</em></h2>
+<section id="getting-help-inside-r" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="getting-help-inside-r"><span class="header-section-number">4.3</span> Getting help inside <em>R</em></h2>
 <p>Every function loaded into <em>R</em> has a documentation or help page. This is accessible within <em>R</em> by typing the function preceded by <code>?</code>. For example, if I am not sure what the <code>mean</code> function does or how to use it, I would type <code>?mean</code>, as shown below:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>?mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -372,26 +366,26 @@ citing R packages.</code></pre>
 </div>
 </section>
 </section>
-<section id="datasets" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Datasets:</h1>
+<section id="datasets" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Datasets:</h1>
 <p>We will be working with two different datasets as part of the <em>Module 1: Introduction to R</em> lecture and this <em>Problem Set Assignment</em>. These are fictional data associated with hypothetical studies created to illustrate key points. Look at both datasets, available as comma-separated values (<code>.csv</code>) files in <em>Canvas</em>.</p>
-<section id="dataset-1" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="dataset-1"><span class="header-section-number">6.1</span> Dataset 1</h2>
+<section id="dataset-1" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="dataset-1"><span class="header-section-number">5.1</span> Dataset 1</h2>
 <p>A researcher was interested in the relationship between whether more hours in direct sunlight led to more freckles on the back of hands in humans. They found 10 people who volunteered to participate. Each participant (<code>Subject</code>) tracked how much sun exposure they had over the course of the summer (<code>SunExp</code>). At the end of the summer, they reported the total number of freckles on the backs of both hands (<code>Freckles</code>). <em>Note</em> that some of these filenames have spaces, as from previous classes; we are working on reformatting filenames to fit the best practices described above.</p>
 <ul>
 <li><code>BIOL827.01 Problem Set Data 1.csv</code></li>
 </ul>
 </section>
-<section id="dataset-2" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="dataset-2"><span class="header-section-number">6.2</span> Dataset 2</h2>
+<section id="dataset-2" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="dataset-2"><span class="header-section-number">5.2</span> Dataset 2</h2>
 <p>After analyzing dataset 1, the researcher decided to conduct a follow-up study. This time they found 26 volunteers and asked each volunteer to sit in the sun for a specific number of hours every day for the entire summer. Thirteen participants were assigned to each sun exposure regime (<code>SunExp</code>): 1 or 3 hours per day (2 regimes x 13 participants per regime = 36 participants). At the end of the summer, the researcher counted the total number of freckles (<code>Freckles</code>) on the backs of both hands of each participant (<code>Subject</code>).</p>
 <ul>
 <li><code>BIOL827.01 Problem Set Data 2.csv</code></li>
 </ul>
 </section>
 </section>
-<section id="procedure" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Procedure:</h1>
+<section id="procedure" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Procedure:</h1>
 <ol start="2" type="1">
 <li>Download both dataset files (<code>*.csv</code>) from <em>Canvas</em>. Save them to your <em>R</em> folder on your computer.</li>
 </ol>
@@ -399,8 +393,8 @@ citing R packages.</code></pre>
 <ol start="3" type="1">
 <li>Watch <em>Module 1: Introduction to R</em> lecture posted on <em>Canvas</em>. There is also a Module 1 tutorial video that walks through the procedures below.</li>
 </ol>
-<section id="section-a.-set-a-working-directory" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="section-a.-set-a-working-directory"><span class="header-section-number">7.1</span> Section A. Set a working directory</h2>
+<section id="section-a.-set-a-working-directory" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="section-a.-set-a-working-directory"><span class="header-section-number">6.1</span> Section A. Set a working directory</h2>
 <p>The working directory tells <em>RStudio</em> where to look for external files and to save files. This eliminates the need to code the entire file path each time a dataset is imported or an <em>R</em> file is saved.</p>
 <ol start="4" type="1">
 <li>Open R, you should have 4 panes.</li>
@@ -488,8 +482,8 @@ citing R packages.</code></pre>
 <li>We can see a list of all files at the address designated by <code>filepath</code>. Using <code>filepath</code> ensures that our code will always work, and that we are not reliant on being in the correct working directory with <code>setwd</code>. This will become useful when using <code>rmarkdown</code>.</li>
 </ul>
 </section>
-<section id="section-b.-import-a-dataset" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="section-b.-import-a-dataset"><span class="header-section-number">7.2</span> Section B. Import a dataset</h2>
+<section id="section-b.-import-a-dataset" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="section-b.-import-a-dataset"><span class="header-section-number">6.2</span> Section B. Import a dataset</h2>
 <ol start="10" type="1">
 <li>First, we need to tell <em>RStudio</em> a short name for the dataset we are importing. This is called an object name, such as was shown for <code>filepath</code> in step 9.</li>
 </ol>
@@ -572,8 +566,8 @@ citing R packages.</code></pre>
 <li><p>Double-clicking this object should open a new tab with a spreadsheet view of the dataset.</p></li>
 </ul>
 </section>
-<section id="section-c.-subset-a-dataframe" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="section-c.-subset-a-dataframe"><span class="header-section-number">7.3</span> Section C. Subset a dataframe</h2>
+<section id="section-c.-subset-a-dataframe" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="section-c.-subset-a-dataframe"><span class="header-section-number">6.3</span> Section C. Subset a dataframe</h2>
 <p>When working in R, we often want to analyze a subset of observations (= rows) in the <code>data.frame</code>. There are many ways to do this, for now we will use the subset() function to create subsets as new objects. The subset function is formatted like so:</p>
 <p><code>New.dataframe &lt;- subset(dataframe, rows to keep, columns to keep)</code></p>
 <p>Rows should be identified using criteria specified by a logical argument.</p>
@@ -602,8 +596,8 @@ citing R packages.</code></pre>
 <ul>
 <li>If only subsetting columns and keeping all rows of data, two commas should be between the full <code>data.frame</code> name and column variable names so that the row portion of the function is empty. This tells <em>R</em> to keep all rows.</li>
 </ul>
-<section id="anatomy-of-an-r-command" class="level4" data-number="7.3.0.1">
-<h4 data-number="7.3.0.1" class="anchored" data-anchor-id="anatomy-of-an-r-command"><span class="header-section-number">7.3.0.1</span> Anatomy of an <em>R</em> command</h4>
+<section id="anatomy-of-an-r-command" class="level4" data-number="6.3.0.1">
+<h4 data-number="6.3.0.1" class="anchored" data-anchor-id="anatomy-of-an-r-command"><span class="header-section-number">6.3.0.1</span> Anatomy of an <em>R</em> command</h4>
 <p><strong>There are three basic parts to an <em>R</em> command.</strong></p>
 <ol type="1">
 <li><strong>Object</strong>: set of information (value, variable, dataset, model, etc.) <em>R</em> can work with</li>
@@ -615,8 +609,8 @@ citing R packages.</code></pre>
 <p><strong>How R reads the command:</strong></p>
 <p>Create a new object called <code>Data1</code> by importing the <code>.csv</code> file into <em>R</em>. Use the first row of the <code>.csv</code> file to give a variable name to each column.</p>
 </section>
-<section id="section-c.1.-subset-by-columns" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="section-c.1.-subset-by-columns"><span class="header-section-number">7.3.1</span> Section C.1. Subset by columns</h3>
+<section id="section-c.1.-subset-by-columns" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="section-c.1.-subset-by-columns"><span class="header-section-number">6.3.1</span> Section C.1. Subset by columns</h3>
 <p>Create a new dataframe object containing all observations of the sun exposure variable (<code>SunExp</code>) only from existing dataframe <code>Data1</code>.</p>
 <ol start="15" type="1">
 <li>Begin the command by providing a name of your choosing for the new dataframe to be created by subsetting <code>Data1</code>. For example, <code>SunExp.Data1</code> since the new variable will contain only the sun exposure variable.</li>
@@ -671,8 +665,8 @@ citing R packages.</code></pre>
 <li>Quickly and easily highlight a portion of a line by double-clicking on a word. Double clicking will highlight the object or command name only, which you can then run by clicking “Run” or using <code>ctrl</code>+<code>enter</code> or <code>cmd</code>+<code>enter</code>.</li>
 </ul>
 </section>
-<section id="section-c.2.-subset-observations-only" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="section-c.2.-subset-observations-only"><span class="header-section-number">7.3.2</span> Section C.2. Subset observations only</h3>
+<section id="section-c.2.-subset-observations-only" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="section-c.2.-subset-observations-only"><span class="header-section-number">6.3.2</span> Section C.2. Subset observations only</h3>
 <p>Create a different new <code>data.frame</code> from <code>Data1</code>. This new <code>data.frame</code> should contain all variables but only for participants with 20 or more freckles. Selecting a subset of rows requires a logical statement (<em>i.e.</em>, criteria) to let <em>R</em> know which rows to copy to the new <code>data.frame</code>.</p>
 <ol start="19" type="1">
 <li>Begin the command by providing an object name of your choosing for the new <code>data.frame</code>. For example, <code>Freck20.Data</code> since we want data from participants with 20 or more freckles in the new <code>data.frame</code>.</li>
@@ -704,8 +698,8 @@ citing R packages.</code></pre>
 <li>To view contents of this new dataframe in the console panel, highlight or type the new <code>data.frame</code> name and click Run.</li>
 </ol>
 </section>
-<section id="section-c.3.-subset-by-both-variables-and-observations" class="level3" data-number="7.3.3">
-<h3 data-number="7.3.3" class="anchored" data-anchor-id="section-c.3.-subset-by-both-variables-and-observations"><span class="header-section-number">7.3.3</span> Section C.3. Subset by both variables and observations</h3>
+<section id="section-c.3.-subset-by-both-variables-and-observations" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="section-c.3.-subset-by-both-variables-and-observations"><span class="header-section-number">6.3.3</span> Section C.3. Subset by both variables and observations</h3>
 <p>Create a third new dataframe from <code>Data1</code>. This new dataframe should contain only the <code>Subject</code> and <code>SunExp</code> variables and only for participants with 20 or more freckles.</p>
 <ol start="23" type="1">
 <li>Begin the command by providing an object name for the new dataframe.</li>
@@ -738,8 +732,8 @@ citing R packages.</code></pre>
 <p>28. Save your R script file before quitting by clicking the disk icon or by selecting File &gt; Save from the menu at the top of the screen.</p>
 </section>
 </section>
-<section id="section-d.-create-frequency-histograms" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="section-d.-create-frequency-histograms"><span class="header-section-number">7.4</span> Section D. Create frequency histograms</h2>
+<section id="section-d.-create-frequency-histograms" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="section-d.-create-frequency-histograms"><span class="header-section-number">6.4</span> Section D. Create frequency histograms</h2>
 <p>Create a frequency histogram for sun exposure and freckle variables from Data1 to evaluate the frequency distribution for each variable. Here, we will use the hist() function and its default settings to get familiar with the structure and content of histograms.</p>
 <ol start="29" type="1">
 <li>Enter the function: <code>hist(Data1$SunExp)</code>. This tells <em>R</em> to create a histogram from observations of the <code>SunExp</code> variable within the <code>Data1</code> dataframe.</li>
@@ -803,46 +797,46 @@ citing R packages.</code></pre>
 </ul>
 </section>
 </section>
-<section id="problem-set-assignment-directions-and-questions" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Problem Set Assignment Directions and Questions:</h1>
-<section id="points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following." class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following."><span class="header-section-number">8.1</span> 1. (2 points) In Dataset 1, identify which variable is the response variable and which isthe explanatory variable as well as what type of data each represents (categoricalnominal, categorical ordinal, numeric discrete, numeric continuous). In Canvas, therewill be dropdowns for you to use to identify the type of variable and the type of dataassociated with each of the following.</h2>
-<section id="a.-sun-exposure-sunexp" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="a.-sun-exposure-sunexp"><span class="header-section-number">8.1.1</span> a. Sun exposure (SunExp)?</h3>
+<section id="problem-set-assignment-directions-and-questions" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Problem Set Assignment Directions and Questions:</h1>
+<section id="points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following." class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="points-in-dataset-1-identify-which-variable-is-the-response-variable-and-which-isthe-explanatory-variable-as-well-as-what-type-of-data-each-represents-categoricalnominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-therewill-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-dataassociated-with-each-of-the-following."><span class="header-section-number">7.1</span> 1. (2 points) In Dataset 1, identify which variable is the response variable and which isthe explanatory variable as well as what type of data each represents (categoricalnominal, categorical ordinal, numeric discrete, numeric continuous). In Canvas, therewill be dropdowns for you to use to identify the type of variable and the type of dataassociated with each of the following.</h2>
+<section id="a.-sun-exposure-sunexp" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="a.-sun-exposure-sunexp"><span class="header-section-number">7.1.1</span> a. Sun exposure (SunExp)?</h3>
 </section>
-<section id="b.-freckles-freckles" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="b.-freckles-freckles"><span class="header-section-number">8.1.2</span> b. Freckles (Freckles)?</h3>
-</section>
-</section>
-<section id="points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">8.2</span> 2. (2 points) In Dataset 2, identify which variable is the response variable and which is the explanatory variable as well as what type of data each represents (categorical nominal, categorical ordinal, numeric discrete, numeric continuous). In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</h2>
-<section id="a.-sun-exposure-sunexp-1" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="a.-sun-exposure-sunexp-1"><span class="header-section-number">8.2.1</span> a. Sun exposure (SunExp)?</h3>
-</section>
-<section id="b.-freckles-freckles-1" class="level3" data-number="8.2.2">
-<h3 data-number="8.2.2" class="anchored" data-anchor-id="b.-freckles-freckles-1"><span class="header-section-number">8.2.2</span> b. Freckles (Freckles)?</h3>
+<section id="b.-freckles-freckles" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="b.-freckles-freckles"><span class="header-section-number">7.1.2</span> b. Freckles (Freckles)?</h3>
 </section>
 </section>
-<section id="points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">8.3</span> 3. (2 points) Based on descriptions of the studies associated with each dataset, answer the following questions. In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</h2>
-<section id="a.-was-dataset-1-associated-with-an-observational-or-experimental-study" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="a.-was-dataset-1-associated-with-an-observational-or-experimental-study"><span class="header-section-number">8.3.1</span> a. Was Dataset 1 associated with an observational or experimental study?</h3>
+<section id="points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="points-in-dataset-2-identify-which-variable-is-the-response-variable-and-which-is-the-explanatory-variable-as-well-as-what-type-of-data-each-represents-categorical-nominal-categorical-ordinal-numeric-discrete-numeric-continuous.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">7.2</span> 2. (2 points) In Dataset 2, identify which variable is the response variable and which is the explanatory variable as well as what type of data each represents (categorical nominal, categorical ordinal, numeric discrete, numeric continuous). In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</h2>
+<section id="a.-sun-exposure-sunexp-1" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="a.-sun-exposure-sunexp-1"><span class="header-section-number">7.2.1</span> a. Sun exposure (SunExp)?</h3>
 </section>
-<section id="b.-was-dataset-2-associated-with-an-observational-or-experimental-study" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="b.-was-dataset-2-associated-with-an-observational-or-experimental-study"><span class="header-section-number">8.3.2</span> b. Was Dataset 2 associated with an observational or experimental study?</h3>
-</section>
-</section>
-<section id="points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas." class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas."><span class="header-section-number">8.4</span> 4. (6 points) Using Dataset 2, create one histogram of freckles data for participants exposed to 1 hour of sun daily and another for freckles of participants exposed to 3 hours of sun daily. You will be asked to paste screenshots or insert images of both histograms in Canvas.</h2>
-<section id="a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually." class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually."><span class="header-section-number">8.4.1</span> a. To do this, you will first need to create a subset of each SunExp sample (1 hour subset, 3 hour subset). Then, create a histogram for each individually.</h3>
+<section id="b.-freckles-freckles-1" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="b.-freckles-freckles-1"><span class="header-section-number">7.2.2</span> b. Freckles (Freckles)?</h3>
 </section>
 </section>
-<section id="points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">8.5</span> 5. (4 points) Describe the distribution of each in terms of skewness (positive, negative, none/normal, or unclear) and kurtosis (positive/leptokurtic, negative/platykurtic, or neutral/mesokurtic, or unclear)? In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</h2>
+<section id="points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="points-based-on-descriptions-of-the-studies-associated-with-each-dataset-answer-the-following-questions.-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">7.3</span> 3. (2 points) Based on descriptions of the studies associated with each dataset, answer the following questions. In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</h2>
+<section id="a.-was-dataset-1-associated-with-an-observational-or-experimental-study" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="a.-was-dataset-1-associated-with-an-observational-or-experimental-study"><span class="header-section-number">7.3.1</span> a. Was Dataset 1 associated with an observational or experimental study?</h3>
 </section>
-<section id="for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output." class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output."><span class="header-section-number">8.6</span> 6. For the possibility of partial credit, you will be able to upload a document showing your work (e.g., R code and output).</h2>
+<section id="b.-was-dataset-2-associated-with-an-observational-or-experimental-study" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="b.-was-dataset-2-associated-with-an-observational-or-experimental-study"><span class="header-section-number">7.3.2</span> b. Was Dataset 2 associated with an observational or experimental study?</h3>
+</section>
+</section>
+<section id="points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas." class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="points-using-dataset-2-create-one-histogram-of-freckles-data-for-participants-exposed-to-1-hour-of-sun-daily-and-another-for-freckles-of-participants-exposed-to-3-hours-of-sun-daily.-you-will-be-asked-to-paste-screenshots-or-insert-images-of-both-histograms-in-canvas."><span class="header-section-number">7.4</span> 4. (6 points) Using Dataset 2, create one histogram of freckles data for participants exposed to 1 hour of sun daily and another for freckles of participants exposed to 3 hours of sun daily. You will be asked to paste screenshots or insert images of both histograms in Canvas.</h2>
+<section id="a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually." class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="a.-to-do-this-you-will-first-need-to-create-a-subset-of-each-sunexp-sample-1-hour-subset-3-hour-subset.-then-create-a-histogram-for-each-individually."><span class="header-section-number">7.4.1</span> a. To do this, you will first need to create a subset of each SunExp sample (1 hour subset, 3 hour subset). Then, create a histogram for each individually.</h3>
+</section>
+</section>
+<section id="points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following." class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="points-describe-the-distribution-of-each-in-terms-of-skewness-positive-negative-nonenormal-or-unclear-and-kurtosis-positiveleptokurtic-negativeplatykurtic-or-neutralmesokurtic-or-unclear-in-canvas-there-will-be-dropdowns-for-you-to-use-to-identify-the-type-of-variable-and-the-type-of-data-associated-with-each-of-the-following."><span class="header-section-number">7.5</span> 5. (4 points) Describe the distribution of each in terms of skewness (positive, negative, none/normal, or unclear) and kurtosis (positive/leptokurtic, negative/platykurtic, or neutral/mesokurtic, or unclear)? In Canvas, there will be dropdowns for you to use to identify the type of variable and the type of data associated with each of the following.</h2>
+</section>
+<section id="for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output." class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="for-the-possibility-of-partial-credit-you-will-be-able-to-upload-a-document-showing-your-work-e.g.-r-code-and-output."><span class="header-section-number">7.6</span> 6. For the possibility of partial credit, you will be able to upload a document showing your work (e.g., R code and output).</h2>
 <p>Submitting your work for the Modules 1 and 2 Problem Set Assignment: Copy-paste or type your responses or graphs into the corresponding question in the Problem Set Assignment page (a Canvas ‘quiz’). Questions in Canvas may be worded slightly differently than here, usually for brevity, but with the same meaning. If there is a discrepancy in what is being asked between this document and the question form in Canvas, answer based on what is asked in this document. Also, please let me know as soon as possible so I can get it fixed.</p>
 <p><strong>Additional resources for R:</strong></p>
 <p>If you get stuck performing tasks in R, please reach out to me. There is also a wealth of information, pointers, and discussion boards about R language and RStudio online. Performing an internet search often provides insight and may offer more immediate assistance. Here are a few (of many!) websites that tend to be reliable and helpful:</p>
@@ -1286,13 +1280,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./about.html" class="pagination-link" aria-label="About">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">About</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="biol827_biological_statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">biol827_biological_statistics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./module2.html" class="pagination-link" aria-label="Module 2 Problemset">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Module 2 Problemset</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./module2.html" class="pagination-link" aria-label="Module 2">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

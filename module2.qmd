@@ -1,5 +1,5 @@
 ---
-title: "Module 2 Problemset"
+title: "Module 2"
 author: "UNK Biology"
 ---
 
