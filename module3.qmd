@@ -1,0 +1,192 @@
+---
+title: "Module 3"
+author: "UNK Biology"
+---
+
+# Learning objectives:
+
+To continue gaining familiarity with the R statistical framework by using RStudio to:
+
+-   Calculate mean and standard deviation
+
+-   Calculate median, 25th and 75th percentiles, and interquartile range
+
+-   Use functions in `ggplot2` (part of `tidyverse`) to create boxplots, bar charts, scatterplots, and line graphs.
+
+# Packages
+
+In this problem set, we will use more functions associated with the `tidyverse` package, including a subset of this package - `ggplot2` - which is used for creating publication-quality graphs.
+
+First, we need to load this package. Remember - we installed this in a previous module, so we should not need to install in again and should be able to simply load it.
+
+```{r}
+library(tidyverse)
+```
+
+# Datasets:
+
+We will be working with two real-world datasets this week that are pulled directly from Zenodo, the European Union's open-source repository for scientific data. We will be using the `read_csv` command from `tidyverse` to read files directly from the internet into *R*.
+
+## Dataset 1
+
+Our first dataset looks at the energetic costs associated with nesting in an Arctic seabird, the [Common Eider *Somateria mollissima*](https://ebird.org/species/comeid) [@hoyvik_hilde_data_2017]. These data represent the open-access permanent archive of a publication based on these data [@hoyvik_hilde_mind_2016]. The authors constructed artificial shelters around some nests to understand how it affected the physical condition of incubating female eiders. *Note* that I do a few steps below to (1) reduce the size of the data file and (2) rename columns to be more intuitive. All of these steps involve the `tidyverse` steps we've discussed before.
+
+```{r}
+bird_data <- read_csv("https://zenodo.org/records/4960831/files/Data%20file.csv") %>% 
+  # select columns of interest
+  select(`Nest ID`, Ring, MeanT, MeanW, MeanH, `Differ. Days`, 
+         Mass, `Mass recapture`, CS, CSRecapture, `Shelter added (Y/N)`) %>% 
+  # rename columns
+  rename(Nest_ID = `Nest ID`, Bird_ID = Ring,
+         Mean_Temp = MeanT, Mean_Wind = MeanW, 
+         Mean_Humid = MeanH, Days_between_captures = `Differ. Days`,
+         Mass_Initial = Mass, Mass_Recapture = `Mass recapture`,
+         Clutch_size_initial = CS, Clutch_size_recapture = CSRecapture,
+         Shelter_added = `Shelter added (Y/N)`)
+```
+
+## Dataset 2
+
+Our second dataset relates to the effects of nitrogen on the growth of Scots Pine and Norway Spruce [@jetsonen_volume_2025]. This is a dataset related to a publication on these trees and the volume they add that came out a year prior, and represents another open-access dataset [@jetsonen_effects_2024]. Like [dataset 1], we are going to select specific columns and rename them for this assignment.
+
+```{r}
+tree_data <- read_csv("https://zenodo.org/records/14733005/files/N_fertilization_Finland_data.csv") %>% 
+  select(tree, v_incr_annual_compare, FN, Pa, Tsum, SF) %>% 
+  rename(Tree_Species = tree, 
+         Annual_Mean_Volume_Growth = v_incr_annual_compare,
+         Nitrogen_Dose = FN, Mean_Annual_Precipitation = Pa,
+         Long_term_temperature_sum = Tsum, time_since_fertilization = SF)
+```
+
+# Procedure:
+
+1.  Watch Module 3: Describing and Visualizing Data in R for a walk-through of these initial procedures.
+2.  Open a new *R* script or *Rmarkdown* script in the source pane by clicking on the `File menu > New File > R Script` or `Rmarkdown`.
+3.  If necessary, you can clear the environment and plots panes from *R*’s memory by type `rm(list=ls())` in the code pane and then hitting `CTRL` + `L` to clear the coding pane's text. Alternatively, this can be accomplished by clicking the broom icon at the top of both of these panes and clear the console by clicking on `Editmenu > Clear Console`.
+4.  Set your working directory and import both datasets. Review Modules 1 and 2 procedures, if necessary, for a reminder of how to complete these tasks.
+
+-   For these procedures and video, [dataset 1] was imported as a dataframe object named `bird_data`, and [dataset 2] as a dataframe object named `tree_data`.
+
+Descriptive statistics refers to simple calculations that summarize or describe a given variable. Measures of central tendency commonly used are the mean (i.e., average) and median (i.e, 50th percentile). Corresponding measures of spread are standard deviation (accompanying the mean) and interquartile range or 25th and 75th percentiles (accompanying the median).
+
+## Section A. Calculate mean and standard deviation
+
+5.  Create a new column for the difference in mass as a percent of the birds' initial mass using the command `mutate`.
+
+```{r}
+bird_data <- bird_data %>% 
+  mutate(Percent_mass_change = (Mass_Recapture - Mass_Initial)/Mass_Initial)
+```
+
+6.  Calculate the mean and standard deviation of the `Percent_mass_change` variable separately for whether the nest was or was not sheltered (`Shelter_added`; `Y` or `N`). First, we will calculate these "by hand" using the following equations:
+
+$$
+\bar{x}=\frac{\Sigma_1^n x}{n}
+$$
+
+$$
+s^2 = \frac{\Sigma_i^n (x_i - \bar{x})^2}{n}
+$$
+
+In order to do this, we will need to write a `function`. A `function` is a specific *R* command that creates a pipeline for some sort of input data.
+
+In writing these functions, it's important to know that we can perform subtraction, multiplication, and other mathematical functions across multiple values as once. For example, if we want to know what $1$ through $10$ all $-5.5$ are equal, we can do the following:
+
+```{r}
+# denote multiple numbers with :
+x <- 1:10
+
+x - 5.5
+```
+
+We can write our own functions in *R* that will perform these functions as follows:
+
+```{r}
+our_mean <- function(x){
+  # get sum of input
+  sum_x <- sum(x)
+  # calculate length of input
+  n <- length(x)
+  # calculate mean
+  xbar <- sum_x/n
+  # return mean to console
+  # necessary for saving outside function
+  return(xbar)
+}
+
+our_sd <- function(x){
+  # need to calculate mean first!
+  # copied from above
+  # get sum of input
+  sum_x <- sum(x)
+  # calculate length of input
+  n <- length(x)
+  # calculate mean
+  xbar <- sum_x/n
+  
+  # calculate deviants
+  deviants <- x - xbar
+  deviants_sq <- deviants^2
+  our_variance <- sum(deviants_sq)/n
+  our_sd <- sqrt(our_variance)
+  # return answer
+  return(our_sd)
+}
+```
+
+7.  Remember, we can use `select` to get a specific set of data from a `dataframe` in *R*. I will calculate these metrics for one set of variables here:
+
+```{r}
+# filter data
+no_shelter_change <- bird_data %>% 
+  # get non-sheltered birds
+  filter(Shelter_added == "N")
+
+# extract data of interest ONLY
+no_shelter_mass_change <- no_shelter_change$Percent_mass_change
+
+# view first few values
+head(no_shelter_mass_change)
+```
+
+8.  Now that we have our data subsetted, we can calculate "by hand".
+
+```{r}
+our_mean(no_shelter_mass_change)
+```
+
+```{r}
+our_sd(no_shelter_mass_change)
+```
+
+8.  Now, calculate the following for individuals *with* shelters. Your answers should be as follows:
+
+```{r, echo = F}
+# filter data
+shelter_change <- bird_data %>% 
+  # get non-sheltered birds
+  filter(Shelter_added == "Y")
+
+# extract data of interest ONLY
+shelter_mass_change <- shelter_change$Percent_mass_change
+```
+
+```{r}
+our_mean(shelter_mass_change)
+```
+
+```{r}
+our_sd(shelter_mass_change)
+```
+
+9.  Now, let's compare our answers to those calculated by *R*. These values may differ slightly based on rounding in *R*, but should be very close. Remember - you can use the same objects that we used before if they are still stored in your memory!
+
+```{r}
+mean(no_shelter_mass_change)
+```
+
+```{r}
+sd(no_shelter_mass_change)
+```
+
+# Still being formatted; check back soon.

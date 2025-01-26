@@ -10,7 +10,11 @@ book:
       - index.qmd
       - module1.qmd
       - module2.qmd
-      - module3_4.qmd
+      - module3.qmd
+      - references.qmd
+      
+bibliography: references.bib
+csl: the-auk.csl
 
 format:
   html:

@@ -1,5 +1,19 @@
----
-title: "biol827_biological_statistics"
----
+# Preface {.unnumbered}
 
-Welcome to BIOL827: Biological Statistics! This class is designed to introduce you to statistics while also teaching you important skills related to programming. This website is designed to accompany the course and improve folks' abilities to complete module problemsets. Please email your instructor with any questions.
+Welcome to Biology 827 at the University of Nebraska at Kearney! Material in this class was designed by Drs. Greg Pec, Jayne Jonas, and Jacob C. Cooper for use in *R*.
+
+By the end of this course, you should be able to:
+
+Course learning objectives: By the end of this course, students will be able to:
+1. Identify best practices for data management, including creation of metadata, to ensure the longevity of datasets.
+2. Construct testable hypotheses about biological systems and identify appropriate experimental designs to statistically test those hypotheses.
+3. Calculate descriptive statistics to examine the character of a dataset and evaluate statistical power.
+4. Conduct and interpret results of standard statistical tests as appropriate for the experimental design used and data collected.
+5. Apply statistical concepts in critically evaluating research conducted by others.
+6. Communicate research results that are accurately, concisely, and straightforwardly supported by statistics.
+
+This site will help you navigate different homework assignments to perform the necessary *R* tests.
+
+Welcome to class!
+
+Dr. Jacob C. Cooper, BHS 321

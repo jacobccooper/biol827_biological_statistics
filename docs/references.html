@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="University of Nebraska at Kearney Dept. of Biology">
 
-<title>4&nbsp; Modules 3 &amp; 4: Describing data, Uncertainty, and Probability – biol827_biological_statistics</title>
+<title>References – biol827_biological_statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./module2.html" rel="prev">
+<link href="./module3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./module3_4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modules 3 &amp; 4: Describing data, Uncertainty, and Probability</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -109,25 +127,31 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">biol827_biological_statistics</span></span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Module 1</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 2</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./module3_4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modules 3 &amp; 4: Describing data, Uncertainty, and Probability</span></span></a>
+  <a href="./module3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 3</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
@@ -135,33 +159,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#needs-to-be-reformatted." id="toc-needs-to-be-reformatted." class="nav-link active" data-scroll-target="#needs-to-be-reformatted."><span class="header-section-number">5</span> Needs to be reformatted.</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modules 3 &amp; 4: Describing data, Uncertainty, and Probability</span></h1>
+<h1 class="title">References</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>University of Nebraska at Kearney Dept. of Biology </p>
-          </div>
-  </div>
     
   
     
@@ -172,11 +184,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="needs-to-be-reformatted." class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Needs to be reformatted.</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-hoyvik_hilde_mind_2016" class="csl-entry" role="listitem">
+Høyvik Hilde, C., C. Pélabon, L. Guéry, G. W. Gabrielsen, and S.
+Descamps (2016). <a href="https://doi.org/10.1002/ece3.1988">Mind the
+wind: Microclimate effects on incubation effort of an arctic
+seabird</a>. Ecology and Evolution 6:1914–1921.
+</div>
+<div id="ref-jetsonen_volume_2025" class="csl-entry" role="listitem">
+Jetsonen, J. T., A. Lauren, H. Peltola, K. E. M. Laurén, S. Launiainen,
+and M. Palviainen (2025). Volume growth responses of <span>Scots</span>
+pine and <span>Norway</span> spruce to nitrogen fertilization:
+Quantitative synthesis of fertilization experiments in
+<span>Finland</span>. [Online.] Available at <a href="https://zenodo.org/records/14733005">https://zenodo.org/records/14733005</a>.
+</div>
+<div id="ref-jetsonen_effects_2024" class="csl-entry" role="listitem">
+Jetsonen, J., A. Laurén, H. Peltola, O. Muhonen, J. Nevalainen, V.-P.
+Ikonen, A. Kilpeläinen, E.-S. Tuittila, E. Männistö, N. Kokkonen, and M.
+Palviainen (2024). <a href="https://doi.org/10.14214/sf.23058">Effects
+of nitrogen fertilization on the ground vegetation cover and soil
+chemical properties in <span>Scots</span> pine and <span>Norway</span>
+spruce stands</a>. Silva Fennica 58.
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -601,8 +633,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./module2.html" class="pagination-link" aria-label="Module 2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></span>
+      <a href="./module3.html" class="pagination-link" aria-label="Module 3">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 3</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

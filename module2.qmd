@@ -41,7 +41,7 @@ library(tidyverse)
 
 # where are my files?
 # REMEMBER - this is for MAC!
-filepath <- "~/Documents/BIOL827/"
+filepath <- "~/Desktop/BIOL827/"
 
 # load my file
 # NOTE you will get a multicolored output
@@ -184,7 +184,7 @@ Within `stat.desc`, there are multiple options. The defaults are:
 -   This is based on code by Frédéric Ibanez & Philippe Grosjean; type `?stat.desc` into your bottom left pane to learn more about it.
 
 | Abbreviation | Meaning |
-|---------------------------|---------------------------------------------|
+|----|----|
 | `nbr.val` | Number of observations containing a number value. |
 | `n` | Sample size. |
 | `median` | Median value among all observations. Half of values are lower and half of values are higher than this value. |

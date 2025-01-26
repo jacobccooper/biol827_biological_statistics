@@ -8,7 +8,7 @@
 
 <meta name="author" content="UNK Biology">
 
-<title>3&nbsp; Module 2 – biol827_biological_statistics</title>
+<title>2&nbsp; Module 2 – biol827_biological_statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./module3_4.html" rel="next">
+<link href="./module3.html" rel="next">
 <link href="./module1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -145,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./module2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./module2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 2</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -173,25 +173,31 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">biol827_biological_statistics</span></span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Module 1</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 2</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./module3_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modules 3 &amp; 4: Describing data, Uncertainty, and Probability</span></span></a>
+  <a href="./module3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 3</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
@@ -204,44 +210,44 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">4</span> Learning objectives:</a></li>
-  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">5</span> Datasets:</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">3</span> Learning objectives:</a></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">4</span> Datasets:</a>
   <ul class="collapse">
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">5.1</span> Dataset</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">4.1</span> Dataset</a></li>
   </ul></li>
-  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure"><span class="header-section-number">6</span> Procedure:</a>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure"><span class="header-section-number">5</span> Procedure:</a>
   <ul class="collapse">
-  <li><a href="#a.-calculate-descriptive-statistics" id="toc-a.-calculate-descriptive-statistics" class="nav-link" data-scroll-target="#a.-calculate-descriptive-statistics"><span class="header-section-number">6.1</span> A. Calculate descriptive statistics</a></li>
-  <li><a href="#b.-install-an-r-add-on-package" id="toc-b.-install-an-r-add-on-package" class="nav-link" data-scroll-target="#b.-install-an-r-add-on-package"><span class="header-section-number">6.2</span> B. Install an R add-on package</a></li>
-  <li><a href="#c.-activate-an-add-on-package" id="toc-c.-activate-an-add-on-package" class="nav-link" data-scroll-target="#c.-activate-an-add-on-package"><span class="header-section-number">6.3</span> C. Activate an add-on package</a></li>
-  <li><a href="#d.-use-function-stat.desc-to-calculate-descriptive-statistics" id="toc-d.-use-function-stat.desc-to-calculate-descriptive-statistics" class="nav-link" data-scroll-target="#d.-use-function-stat.desc-to-calculate-descriptive-statistics"><span class="header-section-number">6.4</span> D. Use function stat.desc to calculate descriptive statistics</a>
+  <li><a href="#a.-calculate-descriptive-statistics" id="toc-a.-calculate-descriptive-statistics" class="nav-link" data-scroll-target="#a.-calculate-descriptive-statistics"><span class="header-section-number">5.1</span> A. Calculate descriptive statistics</a></li>
+  <li><a href="#b.-install-an-r-add-on-package" id="toc-b.-install-an-r-add-on-package" class="nav-link" data-scroll-target="#b.-install-an-r-add-on-package"><span class="header-section-number">5.2</span> B. Install an R add-on package</a></li>
+  <li><a href="#c.-activate-an-add-on-package" id="toc-c.-activate-an-add-on-package" class="nav-link" data-scroll-target="#c.-activate-an-add-on-package"><span class="header-section-number">5.3</span> C. Activate an add-on package</a></li>
+  <li><a href="#d.-use-function-stat.desc-to-calculate-descriptive-statistics" id="toc-d.-use-function-stat.desc-to-calculate-descriptive-statistics" class="nav-link" data-scroll-target="#d.-use-function-stat.desc-to-calculate-descriptive-statistics"><span class="header-section-number">5.4</span> D. Use function stat.desc to calculate descriptive statistics</a>
   <ul class="collapse">
-  <li><a href="#d.1.-commands-on-a-single-variable" id="toc-d.1.-commands-on-a-single-variable" class="nav-link" data-scroll-target="#d.1.-commands-on-a-single-variable"><span class="header-section-number">6.4.1</span> D.1. Commands on a single variable</a></li>
-  <li><a href="#d.2.-multiple-variables-in-one-command" id="toc-d.2.-multiple-variables-in-one-command" class="nav-link" data-scroll-target="#d.2.-multiple-variables-in-one-command"><span class="header-section-number">6.4.2</span> D.2. Multiple variables in one command</a></li>
-  <li><a href="#d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations" id="toc-d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations" class="nav-link" data-scroll-target="#d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations"><span class="header-section-number">6.4.3</span> D.3. Calculate descriptive statistics for only one group of observations</a></li>
+  <li><a href="#d.1.-commands-on-a-single-variable" id="toc-d.1.-commands-on-a-single-variable" class="nav-link" data-scroll-target="#d.1.-commands-on-a-single-variable"><span class="header-section-number">5.4.1</span> D.1. Commands on a single variable</a></li>
+  <li><a href="#d.2.-multiple-variables-in-one-command" id="toc-d.2.-multiple-variables-in-one-command" class="nav-link" data-scroll-target="#d.2.-multiple-variables-in-one-command"><span class="header-section-number">5.4.2</span> D.2. Multiple variables in one command</a></li>
+  <li><a href="#d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations" id="toc-d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations" class="nav-link" data-scroll-target="#d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations"><span class="header-section-number">5.4.3</span> D.3. Calculate descriptive statistics for only one group of observations</a></li>
   </ul></li>
-  <li><a href="#e.-create-a-new-variable" id="toc-e.-create-a-new-variable" class="nav-link" data-scroll-target="#e.-create-a-new-variable"><span class="header-section-number">6.5</span> E. Create a new variable</a></li>
+  <li><a href="#e.-create-a-new-variable" id="toc-e.-create-a-new-variable" class="nav-link" data-scroll-target="#e.-create-a-new-variable"><span class="header-section-number">5.5</span> E. Create a new variable</a></li>
   </ul></li>
-  <li><a href="#problem-set" id="toc-problem-set" class="nav-link" data-scroll-target="#problem-set"><span class="header-section-number">7</span> Problem Set</a>
+  <li><a href="#problem-set" id="toc-problem-set" class="nav-link" data-scroll-target="#problem-set"><span class="header-section-number">6</span> Problem Set</a>
   <ul class="collapse">
-  <li><a href="#points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units." id="toc-points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units." class="nav-link" data-scroll-target="#points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units."><span class="header-section-number">7.1</span> 6. (6 points) Create new variables in the dataframe Data (or whatever object name you gave the imported *.csv file): weight and height in English units.</a>
+  <li><a href="#points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units." id="toc-points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units." class="nav-link" data-scroll-target="#points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units."><span class="header-section-number">6.1</span> 6. (6 points) Create new variables in the dataframe Data (or whatever object name you gave the imported *.csv file): weight and height in English units.</a>
   <ul class="collapse">
-  <li><a href="#a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated." id="toc-a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated." class="nav-link" data-scroll-target="#a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated."><span class="header-section-number">7.1.1</span> a. You will be asked to insert an image or screenshot of the dataframe showing they have been added and correctly calculated.</a></li>
-  <li><a href="#b.-conversions" id="toc-b.-conversions" class="nav-link" data-scroll-target="#b.-conversions"><span class="header-section-number">7.1.2</span> b. Conversions:</a></li>
-  <li><a href="#c.-coding-how-to" id="toc-c.-coding-how-to" class="nav-link" data-scroll-target="#c.-coding-how-to"><span class="header-section-number">7.1.3</span> c.&nbsp;Coding how-to:</a></li>
+  <li><a href="#a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated." id="toc-a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated." class="nav-link" data-scroll-target="#a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated."><span class="header-section-number">6.1.1</span> a. You will be asked to insert an image or screenshot of the dataframe showing they have been added and correctly calculated.</a></li>
+  <li><a href="#b.-conversions" id="toc-b.-conversions" class="nav-link" data-scroll-target="#b.-conversions"><span class="header-section-number">6.1.2</span> b. Conversions:</a></li>
+  <li><a href="#c.-coding-how-to" id="toc-c.-coding-how-to" class="nav-link" data-scroll-target="#c.-coding-how-to"><span class="header-section-number">6.1.3</span> c.&nbsp;Coding how-to:</a></li>
   </ul></li>
-  <li><a href="#points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary." id="toc-points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary." class="nav-link" data-scroll-target="#points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary."><span class="header-section-number">7.2</span> 7. (6 points) Use the <code>stat.desc()</code> function to calculate descriptive statistics for <code>Height.in</code> and <code>Weight.lbs</code> separately for each sample (<code>Female</code>, <code>Male</code>, <code>NonBinary</code>).</a>
+  <li><a href="#points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary." id="toc-points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary." class="nav-link" data-scroll-target="#points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary."><span class="header-section-number">6.2</span> 7. (6 points) Use the <code>stat.desc()</code> function to calculate descriptive statistics for <code>Height.in</code> and <code>Weight.lbs</code> separately for each sample (<code>Female</code>, <code>Male</code>, <code>NonBinary</code>).</a>
   <ul class="collapse">
-  <li><a href="#a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas." id="toc-a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas." class="nav-link" data-scroll-target="#a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas."><span class="header-section-number">7.2.1</span> a. You will be asked to insert an image or screenshot of the output from the <em>RStudio</em> console window in <em>Canvas</em>.</a></li>
-  <li><a href="#b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio." id="toc-b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio." class="nav-link" data-scroll-target="#b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio."><span class="header-section-number">7.2.2</span> b. Hint: You will need to use skills from both the Module 1 and Module 2 portions of the problem set to complete this task in <em>RStudio</em>.</a></li>
+  <li><a href="#a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas." id="toc-a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas." class="nav-link" data-scroll-target="#a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas."><span class="header-section-number">6.2.1</span> a. You will be asked to insert an image or screenshot of the output from the <em>RStudio</em> console window in <em>Canvas</em>.</a></li>
+  <li><a href="#b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio." id="toc-b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio." class="nav-link" data-scroll-target="#b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio."><span class="header-section-number">6.2.2</span> b. Hint: You will need to use skills from both the Module 1 and Module 2 portions of the problem set to complete this task in <em>RStudio</em>.</a></li>
   </ul></li>
-  <li><a href="#points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any" id="toc-points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any" class="nav-link" data-scroll-target="#points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any"><span class="header-section-number">7.3</span> 8. (3 points) Look at your <em>R</em> scripts from Module 1 and Module 2 portions of this Problem Set. Evaluate how well you did or did not follow best practices for documenting your workflows. Briefly discuss improvements that could be made to the way you document your analysis workflow in future problem sets, if any?</a></li>
+  <li><a href="#points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any" id="toc-points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any" class="nav-link" data-scroll-target="#points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any"><span class="header-section-number">6.3</span> 8. (3 points) Look at your <em>R</em> scripts from Module 1 and Module 2 portions of this Problem Set. Evaluate how well you did or did not follow best practices for documenting your workflows. Briefly discuss improvements that could be made to the way you document your analysis workflow in future problem sets, if any?</a></li>
   </ul></li>
-  <li><a href="#optional-extra-credit-3-points-possible" id="toc-optional-extra-credit-3-points-possible" class="nav-link" data-scroll-target="#optional-extra-credit-3-points-possible"><span class="header-section-number">8</span> Optional extra-credit (+3 points possible):</a>
+  <li><a href="#optional-extra-credit-3-points-possible" id="toc-optional-extra-credit-3-points-possible" class="nav-link" data-scroll-target="#optional-extra-credit-3-points-possible"><span class="header-section-number">7</span> Optional extra-credit (+3 points possible):</a>
   <ul class="collapse">
-  <li><a href="#create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated" id="toc-create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated" class="nav-link" data-scroll-target="#create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated"><span class="header-section-number">8.1</span> 9. Create a histogram for each of the following variables in the sample indicated:</a></li>
+  <li><a href="#create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated" id="toc-create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated" class="nav-link" data-scroll-target="#create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated"><span class="header-section-number">7.1</span> 9. Create a histogram for each of the following variables in the sample indicated:</a></li>
   </ul></li>
-  <li><a href="#submitting-your-work-for-the-modules-1-and-2-problem-set-assignment" id="toc-submitting-your-work-for-the-modules-1-and-2-problem-set-assignment" class="nav-link" data-scroll-target="#submitting-your-work-for-the-modules-1-and-2-problem-set-assignment"><span class="header-section-number">9</span> Submitting your work for the Modules 1 and 2 Problem Set Assignment:</a></li>
+  <li><a href="#submitting-your-work-for-the-modules-1-and-2-problem-set-assignment" id="toc-submitting-your-work-for-the-modules-1-and-2-problem-set-assignment" class="nav-link" data-scroll-target="#submitting-your-work-for-the-modules-1-and-2-problem-set-assignment"><span class="header-section-number">8</span> Submitting your work for the Modules 1 and 2 Problem Set Assignment:</a></li>
   </ul>
 </nav>
     </div>
@@ -250,7 +256,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 2</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 2</span></h1>
 </div>
 
 
@@ -273,8 +279,8 @@ window.Quarto = {
 </header>
 
 
-<section id="learning-objectives" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Learning objectives:</h1>
+<section id="learning-objectives" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Learning objectives:</h1>
 <p>To continue gaining familiarity with the R statistical framework by using <em>RStudio</em> to:</p>
 <ul>
 <li><p>Create new variables from existing variables</p></li>
@@ -283,19 +289,19 @@ window.Quarto = {
 <li><p>Use an add-on <em>R</em> package to calculate descriptive statistics</p></li>
 </ul>
 </section>
-<section id="datasets" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Datasets:</h1>
+<section id="datasets" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Datasets:</h1>
 <p>We will be working with another fictional dataset. These data were created at random to illustrate <em>R</em> tasks. Any patterns in these data are random and unintentional. The dataset is available as a comma-separated values (<code>.csv</code>) file in <em>Canvas</em>.</p>
-<section id="dataset" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">5.1</span> Dataset</h2>
+<section id="dataset" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">4.1</span> Dataset</h2>
 <p>A researcher was conducting an exercise physiology study. The research team wanted to know whether volunteers of different sexes (female, male, non-binary) differed in physical characteristics, especially Body Mass Index (BMI). For each volunteer, the research team recorded their weight (in kilograms, kg) and height (in meters, m) of each participant.</p>
 <ul>
 <li>BIOL827.02_Problem_Set_Data.csv</li>
 </ul>
 </section>
 </section>
-<section id="procedure" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Procedure:</h1>
+<section id="procedure" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Procedure:</h1>
 <ol type="1">
 <li>Watch <strong>Module 2: Manipulating and Describing Data in <em>R</em></strong> for a walk-through of these initial procedures.</li>
 <li>Open a new <em>R</em> script in the source pane by clicking on <code>File menu &gt; New File &gt; R Script</code>. If so desired, you can also select <code>Rmarkdown</code> to create an <code>rmarkdown</code> script instead. <strong>Save your script frequently as you work through the problem set (<code>File menu &gt; Save</code> or CTRL + S</strong> [Windows] <strong>or CMD + S</strong> [Mac]<strong>).</strong></li>
@@ -323,7 +329,7 @@ window.Quarto = {
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># where are my files?</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># REMEMBER - this is for MAC!</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">"~/Documents/BIOL827/"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>filepath <span class="ot">&lt;-</span> <span class="st">"~/Desktop/BIOL827/"</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load my file</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co"> you will get a multicolored output</span></span>
@@ -341,8 +347,8 @@ dbl (3): Participant, Weight.kg, Height.m
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<section id="a.-calculate-descriptive-statistics" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="a.-calculate-descriptive-statistics"><span class="header-section-number">6.1</span> A. Calculate descriptive statistics</h2>
+<section id="a.-calculate-descriptive-statistics" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="a.-calculate-descriptive-statistics"><span class="header-section-number">5.1</span> A. Calculate descriptive statistics</h2>
 <p>Descriptive statistics refers to simple calculations that summarize or describe a given variable, such as the mean (i.e., average, <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\bar{x}\)</span>), measures of variation in the data (standard deviation [<span class="math inline">\(\sigma\)</span>, <span class="math inline">\(s\)</span>], variation, etc.), and spread (minimum, maximum, range, etc.). These values are also one of the tools we can use as part of quality assurance and quality control.</p>
 <ol start="5" type="1">
 <li>To calculate the mean of the <code>Weight.kg</code> variable over all sample units, use <code>mean(Data$Weight.kg)</code>. This tells <em>R</em> to calculate the mean from observations of the <code>Weight.kg</code> variable within the <code>Data</code> dataframe.</li>
@@ -405,8 +411,8 @@ dbl (3): Participant, Weight.kg, Height.m
 </div>
 </div>
 </section>
-<section id="b.-install-an-r-add-on-package" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="b.-install-an-r-add-on-package"><span class="header-section-number">6.2</span> B. Install an R add-on package</h2>
+<section id="b.-install-an-r-add-on-package" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="b.-install-an-r-add-on-package"><span class="header-section-number">5.2</span> B. Install an R add-on package</h2>
 <p>Add-on packages only need to be installed one time. They do not need to be installed each time you open <em>RStudio</em>, but packages do have to be activated each time you open <em>RStudio</em>. Packages only need to be re-installed when the package developer releases an updated version; you will usually receive a prompt in <em>RStudio</em> if/when a package needs to be reinstalled.</p>
 <p>The add-on package <code>pastecs</code> contains a very handy function to create a large set of descriptive statistics all at once. There are other packages that also can calculate sets of descriptive statistics, but this is the best one I have found to date. Although there is a command-line function for installing packages, this generally only needs to be done once so I prefer to use the installation wizard rather than building it into my script.</p>
 <ol start="7" type="1">
@@ -456,8 +462,8 @@ A BibTeX entry for LaTeX users is
 </div>
 </div>
 </section>
-<section id="c.-activate-an-add-on-package" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="c.-activate-an-add-on-package"><span class="header-section-number">6.3</span> C. Activate an add-on package</h2>
+<section id="c.-activate-an-add-on-package" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="c.-activate-an-add-on-package"><span class="header-section-number">5.3</span> C. Activate an add-on package</h2>
 <p>An add-on package must be installed before it can be activated (<a href="#b.-install-an-r-add-on-package">B. Install an R add-on package</a>). Although installation only needs to be done once until a major update is made, you must activate each time you open <em>RStudio</em>.</p>
 <ol start="12" type="1">
 <li>In the source pane, run the code <code>library(pastecs)</code>.</li>
@@ -484,11 +490,11 @@ Attaching package: 'pastecs'</code></pre>
 <li>That’s it! You’ve now got all the additional functions included in this package at your fingertips. So, let’s see what it can do!</li>
 </ol>
 </section>
-<section id="d.-use-function-stat.desc-to-calculate-descriptive-statistics" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="d.-use-function-stat.desc-to-calculate-descriptive-statistics"><span class="header-section-number">6.4</span> D. Use function stat.desc to calculate descriptive statistics</h2>
+<section id="d.-use-function-stat.desc-to-calculate-descriptive-statistics" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="d.-use-function-stat.desc-to-calculate-descriptive-statistics"><span class="header-section-number">5.4</span> D. Use function stat.desc to calculate descriptive statistics</h2>
 <p>A useful function provided in the <code>pastecs</code> package is <code>stat.desc()</code> which can return a large set of descriptive statistics quickly and with ease.</p>
-<section id="d.1.-commands-on-a-single-variable" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="d.1.-commands-on-a-single-variable"><span class="header-section-number">6.4.1</span> D.1. Commands on a single variable</h3>
+<section id="d.1.-commands-on-a-single-variable" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="d.1.-commands-on-a-single-variable"><span class="header-section-number">5.4.1</span> D.1. Commands on a single variable</h3>
 <ol start="14" type="1">
 <li>Enter an <code>object.name &lt;-</code> before your <code>stat.desc</code> command. The object name can be of your choosing, this is where output from the <code>stat.desc()</code> function will be stored.</li>
 </ol>
@@ -521,8 +527,8 @@ Attaching package: 'pastecs'</code></pre>
 </ul>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 37%">
-<col style="width: 62%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -656,8 +662,8 @@ Attaching package: 'pastecs'</code></pre>
 <li>Repeat steps 17 through 20 to run the <code>stat.desc</code> function for the <code>Height.m</code> variable</li>
 </ol>
 </section>
-<section id="d.2.-multiple-variables-in-one-command" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="d.2.-multiple-variables-in-one-command"><span class="header-section-number">6.4.2</span> D.2. Multiple variables in one command</h3>
+<section id="d.2.-multiple-variables-in-one-command" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="d.2.-multiple-variables-in-one-command"><span class="header-section-number">5.4.2</span> D.2. Multiple variables in one command</h3>
 <p>We can also use <code>stat.desc()</code> to calculate descriptive statistics for more than one variable at a time.</p>
 <ol start="18" type="1">
 <li>Enter an <code>object.name &lt;-</code>. The object name can be of your choosing that will store output from the <code>stat.desc()</code> function.</li>
@@ -697,8 +703,8 @@ coef.var        0.2103324  0.036966927</code></pre>
 </div>
 </div>
 </section>
-<section id="d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations"><span class="header-section-number">6.4.3</span> D.3. Calculate descriptive statistics for only one group of observations</h3>
+<section id="d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="d.3.-calculate-descriptive-statistics-for-only-one-group-of-observations"><span class="header-section-number">5.4.3</span> D.3. Calculate descriptive statistics for only one group of observations</h3>
 <p>We need to calculate descriptive statistics separately for each sample. There are different ways to do this in <em>RStudio</em>. This is where <code>tidyverse</code> pipelines come in handy!</p>
 <p>In this dataset, we need to run descriptive statistics separately for each <code>sex</code> group (female, male, non-binary). Here, we will demonstrate the process for the non-binary sample.</p>
 <ol start="21" type="1">
@@ -755,8 +761,8 @@ coef.var          0.13     0.04</code></pre>
 <p>26. To view this, just run <code>female_data</code> or use <code>print(female_data)</code>.</p>
 </section>
 </section>
-<section id="e.-create-a-new-variable" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="e.-create-a-new-variable"><span class="header-section-number">6.5</span> E. Create a new variable</h2>
+<section id="e.-create-a-new-variable" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="e.-create-a-new-variable"><span class="header-section-number">5.5</span> E. Create a new variable</h2>
 <p>Although the research team recorded the height and weight of each participant, they are really interested in the Body Mass Index (BMI) profile of participants. We can have <em>R</em> calculate BMI and add it to the <code>Data</code> dataframe as a new variable. There are separate formulas for calculating BMI depending on whether weight and height are in metric units or in English units; BMI will be the same from either formula. The formula for BMI calculated from weight and height in metric units is:</p>
 <p><span class="math display">\[
 BMI = \frac{mass}{height^2}
@@ -782,46 +788,46 @@ BMI = \frac{mass}{height^2}
 <p>30. To view contents of the dataframe ‘Data’ showing the BMI variable added, highlight or type the object name ‘Data’ and click Run (Fig. 7).</p>
 </section>
 </section>
-<section id="problem-set" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Problem Set</h1>
+<section id="problem-set" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Problem Set</h1>
 <p><u><strong>*See the Module 1 portion of the problem set for questions 1 – 5 (Q1-Q5).</strong></u></p>
-<section id="points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units." class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units."><span class="header-section-number">7.1</span> 6. (6 points) Create new variables in the dataframe Data (or whatever object name you gave the imported *.csv file): weight and height in English units.</h2>
-<section id="a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated." class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated."><span class="header-section-number">7.1.1</span> a. You will be asked to insert an image or screenshot of the dataframe showing they have been added and correctly calculated.</h3>
+<section id="points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units." class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="points-create-new-variables-in-the-dataframe-data-or-whatever-object-name-you-gave-the-imported-.csv-file-weight-and-height-in-english-units."><span class="header-section-number">6.1</span> 6. (6 points) Create new variables in the dataframe Data (or whatever object name you gave the imported *.csv file): weight and height in English units.</h2>
+<section id="a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated." class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-dataframe-showing-they-have-been-added-and-correctly-calculated."><span class="header-section-number">6.1.1</span> a. You will be asked to insert an image or screenshot of the dataframe showing they have been added and correctly calculated.</h3>
 </section>
-<section id="b.-conversions" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="b.-conversions"><span class="header-section-number">7.1.2</span> b. Conversions:</h3>
+<section id="b.-conversions" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="b.-conversions"><span class="header-section-number">6.1.2</span> b. Conversions:</h3>
 <ul>
 <li><p>Weight: <span class="math inline">\(1 kg = 2.20462 lbs\)</span></p></li>
 <li><p>Height: <span class="math inline">\(39.3701in = 1m\)</span></p></li>
 </ul>
 </section>
-<section id="c.-coding-how-to" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="c.-coding-how-to"><span class="header-section-number">7.1.3</span> c.&nbsp;Coding how-to:</h3>
+<section id="c.-coding-how-to" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="c.-coding-how-to"><span class="header-section-number">6.1.3</span> c.&nbsp;Coding how-to:</h3>
 <ul>
 <li><p><code>Data$Weight.lbs</code>: <code>Data$Weight.kg*2.20462</code></p></li>
 <li><p><code>Data$Height.in</code>: <code>Data$Height.m*39.3701</code></p></li>
 </ul>
 </section>
 </section>
-<section id="points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary." class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary."><span class="header-section-number">7.2</span> 7. (6 points) Use the <code>stat.desc()</code> function to calculate descriptive statistics for <code>Height.in</code> and <code>Weight.lbs</code> separately for each sample (<code>Female</code>, <code>Male</code>, <code>NonBinary</code>).</h2>
-<section id="a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas." class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas."><span class="header-section-number">7.2.1</span> a. You will be asked to insert an image or screenshot of the output from the <em>RStudio</em> console window in <em>Canvas</em>.</h3>
+<section id="points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary." class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="points-use-the-stat.desc-function-to-calculate-descriptive-statistics-for-height.in-and-weight.lbs-separately-for-each-sample-female-male-nonbinary."><span class="header-section-number">6.2</span> 7. (6 points) Use the <code>stat.desc()</code> function to calculate descriptive statistics for <code>Height.in</code> and <code>Weight.lbs</code> separately for each sample (<code>Female</code>, <code>Male</code>, <code>NonBinary</code>).</h2>
+<section id="a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas." class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="a.-you-will-be-asked-to-insert-an-image-or-screenshot-of-the-output-from-the-rstudio-console-window-in-canvas."><span class="header-section-number">6.2.1</span> a. You will be asked to insert an image or screenshot of the output from the <em>RStudio</em> console window in <em>Canvas</em>.</h3>
 </section>
-<section id="b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio." class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio."><span class="header-section-number">7.2.2</span> b. Hint: You will need to use skills from both the Module 1 and Module 2 portions of the problem set to complete this task in <em>RStudio</em>.</h3>
-</section>
-</section>
-<section id="points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any"><span class="header-section-number">7.3</span> 8. (3 points) Look at your <em>R</em> scripts from Module 1 and Module 2 portions of this Problem Set. Evaluate how well you did or did not follow best practices for documenting your workflows. Briefly discuss improvements that could be made to the way you document your analysis workflow in future problem sets, if any?</h2>
+<section id="b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio." class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="b.-hint-you-will-need-to-use-skills-from-both-the-module-1-and-module-2-portions-of-the-problem-set-to-complete-this-task-in-rstudio."><span class="header-section-number">6.2.2</span> b. Hint: You will need to use skills from both the Module 1 and Module 2 portions of the problem set to complete this task in <em>RStudio</em>.</h3>
 </section>
 </section>
-<section id="optional-extra-credit-3-points-possible" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Optional extra-credit (+3 points possible):</h1>
-<section id="create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated"><span class="header-section-number">8.1</span> 9. Create a histogram for each of the following variables in the sample indicated:</h2>
+<section id="points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="points-look-at-your-r-scripts-from-module-1-and-module-2-portions-of-this-problem-set.-evaluate-how-well-you-did-or-did-not-follow-best-practices-for-documenting-your-workflows.-briefly-discuss-improvements-that-could-be-made-to-the-way-you-document-your-analysis-workflow-in-future-problem-sets-if-any"><span class="header-section-number">6.3</span> 8. (3 points) Look at your <em>R</em> scripts from Module 1 and Module 2 portions of this Problem Set. Evaluate how well you did or did not follow best practices for documenting your workflows. Briefly discuss improvements that could be made to the way you document your analysis workflow in future problem sets, if any?</h2>
+</section>
+</section>
+<section id="optional-extra-credit-3-points-possible" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Optional extra-credit (+3 points possible):</h1>
+<section id="create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="create-a-histogram-for-each-of-the-following-variables-in-the-sample-indicated"><span class="header-section-number">7.1</span> 9. Create a histogram for each of the following variables in the sample indicated:</h2>
 <ul>
 <li><p>Female Weight.lbs</p></li>
 <li><p>Male Height.in</p></li>
@@ -830,8 +836,8 @@ BMI = \frac{mass}{height^2}
 <p>Compare the histogram to the mean and median of the respective sample calculated using the <code>stat.desc</code> function for question 5 above. How, if at all, does the histogram illustrate the relationship of the mean to the median of that sample?</p>
 </section>
 </section>
-<section id="submitting-your-work-for-the-modules-1-and-2-problem-set-assignment" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Submitting your work for the Modules 1 and 2 Problem Set Assignment:</h1>
+<section id="submitting-your-work-for-the-modules-1-and-2-problem-set-assignment" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Submitting your work for the Modules 1 and 2 Problem Set Assignment:</h1>
 <p>Enter your responses and materials for each item in the corresponding area of the Modules 1 and 2 Problem Set Assignment quiz page. Having the assignment submitted in this way allows me to be much more consistent by grading each question individually across all students in the course before moving on to grading the next question. The Problem Set Assignment quiz must be submitted in <em>Canvas</em> on or before the due date provided in the Course Schedule and in <em>Canvas</em>.</p>
 <p>Questions in <em>Canvas</em> may be worded slightly differently than here, usually for brevity, but with the same meaning. If there is a discrepancy in what is being asked between this document and the question form in <em>Canvas</em>, answer based on what is asked in this document. Also, please let me know as soon as possible so I can get it fixed.</p>
 <p>You will have the opportunity to upload a <code>doc(x)</code>, <code>html</code>, or <code>pdf</code> file at the end of the ‘quiz’ in which you show the steps of your work for the possibility of partial credit. <code>html</code> from <code>RMarkdown</code> is preferred.</p>
@@ -1263,12 +1269,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./module1.html" class="pagination-link" aria-label="Module 1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Module 1</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Module 1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./module3_4.html" class="pagination-link" aria-label="Modules 3 &amp; 4: Describing data, Uncertainty, and Probability">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modules 3 &amp; 4: Describing data, Uncertainty, and Probability</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./module3.html" class="pagination-link" aria-label="Module 3">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Module 3</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -101,13 +101,13 @@ We will be working with two different datasets as part of the *Module 1: Introdu
 
 A researcher was interested in the relationship between whether more hours in direct sunlight led to more freckles on the back of hands in humans. They found 10 people who volunteered to participate. Each participant (`Subject`) tracked how much sun exposure they had over the course of the summer (`SunExp`). At the end of the summer, they reported the total number of freckles on the backs of both hands (`Freckles`). *Note* that some of these filenames have spaces, as from previous classes; we are working on reformatting filenames to fit the best practices described above.
 
--   `BIOL827.01 Problem Set Data 1.csv`
+-   `BIOL827.01_Problem_Set_Data_1.csv`
 
 ## Dataset 2
 
 After analyzing dataset 1, the researcher decided to conduct a follow-up study. This time they found 26 volunteers and asked each volunteer to sit in the sun for a specific number of hours every day for the entire summer. Thirteen participants were assigned to each sun exposure regime (`SunExp`): 1 or 3 hours per day (2 regimes x 13 participants per regime = 36 participants). At the end of the summer, the researcher counted the total number of freckles (`Freckles`) on the backs of both hands of each participant (`Subject`).
 
--   `BIOL827.01 Problem Set Data 2.csv`
+-   `BIOL827.01_Problem_Set_Data_2.csv`
 
 # Procedure:
 
@@ -180,7 +180,7 @@ setwd("~/Documents/BIOL827/")
 8.  We can also save the working directory as an *object*. We can do this as follows:
 
 ```{r}
-filepath <- "~/Documents/BIOL827/"
+filepath <- "~/Desktop/BIOL827/"
 
 filepath
 ```
@@ -226,7 +226,7 @@ list.files(filepath)
 
 ```{r}
 ## Steps 10 through 13 shown here
-Data1 <- read.csv("~/Documents/BIOL827/BIOL827.01_Problem_Set_Data_1.csv")
+Data1 <- read.csv("~/Desktop/BIOL827/BIOL827.01_Problem_Set_Data_1.csv")
 
 # view first few rows
 head(Data1)
