@@ -3,14 +3,14 @@ project:
   output-dir: docs
 
 book:
-  title: "biol827_biological_statistics"
+  title: "BIOL827: Biological Statistics"
   author: "UNK Biology"
   date: "20 January 2025"
   chapters:
       - index.qmd
       - module1.qmd
       - module2.qmd
-      - module3.qmd
+      - citations.qmd
       - references.qmd
       
 bibliography: references.bib

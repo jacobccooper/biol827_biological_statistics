@@ -1,0 +1,48 @@
+---
+title: "Rounding and Citations"
+author: "Dr. Jacob C. Cooper"
+---
+
+# Rounding
+
+In this class, we are going to follow basic rounding rules formatting used for some publications. Specifically, this is based on the guidelines for *Ornithology* (formerly, *The Auk*) and *Ornithology Applications* (formerly, *The Condor*).
+
+When we are rounding data from different datasets, we need to round data to the same number of decimal points as the data we started with. Importantly, we need to do the rounding at the end, and *not* round earlier in the pipeline. We can easily round with the `round` command, as follows.
+
+```{r}
+x <- 3.14157
+
+round(x, 2)
+```
+
+The following accomplishes the same thing, but with `tidyverse` installed.
+
+```{r}
+# always enable tidyverse before using commands!
+library(tidyverse)
+
+x %>% 
+  round(2)
+```
+
+# Citations
+
+Citations need to include:
+
+-   Author
+
+-   Year
+
+-   Title
+
+-   Journal
+
+-   Volume
+
+-   Issue (if available)
+
+-   Page numbers (or article number)
+
+-   DOI (when available)
+
+I will be formatting citations on this site per the guidelines for *Ornithology* (formerly *The Auk*). You can view example citations on the references page.

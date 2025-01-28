@@ -159,7 +159,7 @@ our_mean(no_shelter_mass_change)
 our_sd(no_shelter_mass_change)
 ```
 
-8.  Now, calculate the following for individuals *with* shelters. Your answers should be as follows:
+8.  Now, calculate the following for individuals *with* shelters. Your answers should be as follows (I have hidden my subsetting code):
 
 ```{r, echo = F}
 # filter data
@@ -189,4 +189,340 @@ mean(no_shelter_mass_change)
 sd(no_shelter_mass_change)
 ```
 
-# Still being formatted; check back soon.
+10. Now, we want to run `pastecs` command `stat.desc` on part of the dataframe (for example, the mass change with a shelter).
+
+```{r}
+# use library to load package
+# this may not be shown in future modules!
+library(pastecs)
+
+# stat.desc, rounded to 2 decimals
+stat.desc(shelter_mass_change) %>% 
+  round(2)
+```
+
+Run the command on the mass data for birds with no shelter as well.
+
+11. Compare the weight data for birds with a shelter and without a shelter. What similarities do you see? What differences do you see?
+
+## Section B. Calculate the median (50th), 25th, and 75th percentiles and interquartile range (IQR) {#section-b.-calculate-the-median-50th-25th-and-75th-percentiles-and-interquartile-range-iqr}
+
+Quantiles are a way of looking at the response value at which a given percentage of observations are captured. The most common quantiles are the 25th, 50th, and 75th percentiles. This specific set of quantiles are also called quartiles: 1st quartile (25th percentile), median (50th percentile), and 3rd quartile (75th percentile). The interquartile range (IQR) measures spread representing the middle 50% of observations; that is, 25% of observations fall below the 25th percentile and 25% of observations are above the 75th percentile.
+
+The following examples will use the data for mass change with no shelter, which I called `no_shelter_mass_change` above.
+
+11. First, we will be calculating the median. We can do this with the command `median`.
+
+```{r}
+median(no_shelter_mass_change)
+```
+
+12. Next, we will calculate the quantiles. We will do this using `quantile`, but note that this function includes multiple methods.
+
+```{r}
+quantile(no_shelter_mass_change)
+```
+
+If we want a specific quantile, we can state it.
+
+```{r}
+quantile(no_shelter_mass_change,
+         probs = 0.25)
+```
+
+There are nine different algorithms for calculating quantiles. We will be using `type 6` in this class, which must be specified.
+
+```{r}
+quantile(no_shelter_mass_change,
+         probs = 0.25,
+         type = 6)
+```
+
+***Note*** that the above 25th percentile is different that the default method! Specifying a type is important, and **in this class use type 6**. Type 6 is the same method as is used by *Minitab* and *SPSS*, other statistical softwares, and calculates the quantiles using the equation $p_k = \frac{k}{n+1}$.
+
+Just like other functions, we can save a quantile as an object as well.
+
+```{r}
+q25 <- quantile(no_shelter_mass_change,
+                probs = 0.25, 
+                type = 6)
+
+q25 %>% round(2)
+```
+
+13. Calculate the interquartile range. We can do this using the command `IQR`. The interquartile range is the distance between the 25th and 75th percentiles.
+
+```{r}
+IQR(no_shelter_mass_change)
+```
+
+***NOTE*** that just like `quantile`, `IQR` has different methods and we should use type 6.
+
+```{r}
+IQR(no_shelter_mass_change,
+    type = 6)
+```
+
+## Section C. Use `ggplot` to create plots
+
+There are multiple ways to graph data in *R*, to illustrate we can compare histograms produced using the `hist()` function and using function `ggplot()` in the `ggplot2` package. ***NOTE*** that if you have `tidyverse` installed, as you should already, that you already have `ggplot2` installed! The `tidyverse` is actually a set of multiple packages that all get installed together, of which `ggplot2` is one major component.
+
+Here, we are going to be focusing on `geom_histogram` which creates histograms, but there are also ways to produce many other plots, including `geom_boxplot`, `geom_bar`, `geom_point`, and `geom_line`.
+
+14. For each mass group, with and without shelter, we will create a histogram using `hist`.
+
+```{r}
+hist(shelter_mass_change)
+```
+
+```{r}
+hist(no_shelter_mass_change)
+```
+
+15. Now, we want to create a histogram in `ggplot2`. This is a powerful plotting function, which can be confusing but will create publication quality plots with the right commands. Several parts of the general function syntax are outlined below.
+
+-   `ggplot`: the base function, in which you list the dataframe to be plotted. **The input must be an object with class `dataframe`**.
+
+    -   `aes`: subargument, where aesthetics are listed.
+
+-   `geom_histogram`: create a histogram
+
+-   `xlab`: x axis label
+
+-   `ylab`: y axis label
+
+-   `ggtitle`: main plot title
+
+-   Themes can be used to change plot appearance and make it more readable.
+
+    -   `theme_classic`: nice plain plot with no background.
+
+    -   `theme_minimal`: clean background but with major grid lines shown.
+
+First, we will create a basic histogram, and then we will make a "fancy" histogram.
+
+```{r}
+ggplot(bird_data,
+       aes(x = Percent_mass_change)) +
+  geom_histogram()
+```
+
+Above, we can see that this histogram is pretty similar to a regular histogram from the `hist` command. Now, let's make it look nicer, and even parse out birds based on other variables. The point of each command is noted below. You may see an error about bin widths; this can be ignored.
+
+```{r}
+# define dataset to plot
+ggplot(bird_data,
+       # described aesthetics; thing to plot
+       aes(x = Percent_mass_change,
+           # thing to group by
+           # for stratified studies
+           fill = Shelter_added)) +
+  # create a histogram
+  # alpha sets transparency level
+  geom_histogram(alpha = 0.6, 
+                 # identity prevents "stacking" of bars
+                 position = "identity") +
+  # change x label
+  xlab("Percent mass change") +
+  # change y label
+  ylab("Number of individuals") +
+  # change legend label
+  labs(fill = "Shelter added") +
+  # set minimal theme
+  theme_minimal()
+```
+
+We can also do a density histogram by changing `geom_histogram` to `geom_density`. A density histogram is *smoothed* and shows the *percent* of individuals in each category.
+
+```{r}
+ggplot(bird_data,
+       aes(x = Percent_mass_change,
+           fill = Shelter_added)) +
+  ### Change to density ###
+  geom_density(alpha = 0.6, 
+                 position = "identity") +
+  ### Change to percent from count ###
+  xlab("Percent mass change") +
+  ylab("Percent of individuals") +
+  labs(fill = "Shelter added") +
+  theme_minimal()
+```
+
+16. Above, we saw an error related to "bin count". We can set bin count manually by using the argument `bins` in `geom_histogram`. Below is an example that is the same as shown previously but with `bins = 6`.
+
+```{r}
+# define dataset to plot
+ggplot(bird_data,
+       # described aesthetics; thing to plot
+       aes(x = Percent_mass_change,
+           # thing to group by
+           # for stratified studies
+           fill = Shelter_added)) +
+  # create a histogram
+  # alpha sets transparency level
+  geom_histogram(alpha = 0.6, 
+                 # identity prevents "stacking" of bars
+                 position = "identity",
+                 # set bin number
+                 bins = 6) +
+  # change x label
+  xlab("Percent mass change") +
+  # change y label
+  ylab("Number of individuals") +
+  # change legend label
+  labs(fill = "Shelter added") +
+  # set minimal theme
+  theme_minimal()
+```
+
+## Section E. Create a boxplot using `ggplot2`
+
+17. Create a boxplot for the column `Percent_mass_change` from the `bird_data` dataset. The syntax for this is:
+
+```{r, eval = F}
+### THIS CODE WILL NOT RUN ###
+# Example of set up
+ggplot(dataframe, 
+       # x is grouping variable; like condition
+       # X is not needed, can be blank
+       aes(x = x.variable,
+           # variable to "boxplot"
+           y = y.variable)) +
+  geom_boxplot()
+```
+
+If you enter your correctly, you should get an output like this:
+
+```{r, echo = F}
+ggplot(bird_data, 
+       aes(y = Percent_mass_change)) +
+  geom_boxplot()
+```
+
+If you add a grouping variable, like `x = Shelter_added` to the `aes` argument, you will get something like this:
+
+```{r}
+ggplot(bird_data, 
+       aes(x = Shelter_added, 
+           y = Percent_mass_change)) +
+  geom_boxplot()
+```
+
+18. Like we did before, try changing the names of the axes, and try adding the command `fill = Shelter_added` to see what happens. Remember, you can also add things like `theme_minimal()` to make the plot "tidier". See previous plots for formatting. Here is an example with axes renamed and fill added.
+
+```{r,echo = F}
+ggplot(bird_data, 
+       aes(x = Shelter_added, 
+           y = Percent_mass_change,
+           fill = Shelter_added)) +
+  geom_boxplot() +
+  xlab("Shelter Added") +
+  ylab("Percent Mass Change") +
+  theme_minimal()
+```
+
+## Section F. Create a bar chart using `ggplot2`
+
+19. Next, we are going to create a bar chart for the `Percent_mass_change` data. This is fundamentally similar to the above plots, but instead of `geom_boxplot` or any other argument, we will do the following:
+
+-   `geom_bar(stat = "summary", fun = "mean")`
+
+You should get a plot that looks like the following:
+
+```{r}
+ggplot(bird_data, 
+       aes(x = Shelter_added,
+           y = Percent_mass_change,
+           fill = Shelter_added)) +
+  geom_bar(stat = "summary",
+               fun = "mean")
+```
+
+## Section G. Create an XY scatterplot using `ggplot2`
+
+20. For this scatterplot, we are going to compare `Mass_Initial` to `Mass_Recapture`. We will use `Mass_Initial` as our independent variable (`x`), and `Mass_Recapture` as our dependent variable (`y`).
+
+-   For this plot, we are using `geom_point`, which calls a scatterplot of points.
+
+-   For this one, we are also going to show how sections of this plot can be saved as objects.
+
+```{r}
+a1 <- ggplot(bird_data, 
+             aes(x = Mass_Initial,
+                 y = Mass_Recapture))
+a2 <- geom_point()
+a3 <- theme_minimal()
+```
+
+Try these two combinations to see how you can add things in piecemeal:
+
+```{r}
+a1 + a2
+```
+
+```{r}
+a1 + a2 + a3
+```
+
+We can also split this up by color as well. All we have to do is change the `a1` object above to include `colour`, which is similar to `fill` but better suited for this plot.
+
+```{r}
+a1 <- ggplot(bird_data,
+             aes(x = Mass_Initial,
+                 y = Mass_Recapture,
+                 colour = Shelter_added))
+
+a1 + a2 + a3
+```
+
+## Section H. Create a line graph using `ggplot2`
+
+21. Next, we will create a line graph. This is essentially the same as the previous steps, except we will be using the argument `geom_line` to create our plot.
+
+```{r}
+ggplot(bird_data, aes(x = Mass_Initial,
+                      y = Mass_Recapture,
+                      colour = Shelter_added)) +
+  geom_line()
+```
+
+***Notice*** that this is a fairly messy plot, but it still works and does a good job of illustrating how these things relate. We can still change the axes labels with commands like `xlab` and `ylab`.
+
+# Problem Set 3
+
+The following questions pertain to the `tree_data` object.
+
+## (4 points) Using the `tree_data` object, split the dataset up by `Tree_Species` and Calculate the mean, standard deviation, median, and interquartile range for the column `Annual_Mean_Volume_Growth`. Refer to [Section A. Calculate mean and standard deviation] and [Section B. Calculate the median (50th), 25th, and 75th percentiles and interquartile range (IQR)](#section-b.-calculate-the-median-50th-25th-and-75th-percentiles-and-interquartile-range-iqr) for more information on performing these analyses.
+
+***HINT***: There are only two "species" of tree - `pine` and `spruce`.
+
+**REMEMBER** - answers should be rounded to the nearest tenth (0.1) as this is the precision of the available data.
+
+| Measurement         | `pine` | `spruce` |
+|---------------------|--------|----------|
+| Mean                |        |          |
+| Standard Deviation  |        |          |
+| Median              |        |          |
+| Interquartile Range |        |          |
+
+: Example table for organizing results.
+
+## (2 points) Use package `ggplot2` to create one boxplot with `Annual_Mean_Volume_Growth` on the *y*-axis and each `Tree_Species` on the *x*-axis. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy-paste image files or screenshots of your histograms in *Canvas*.
+
+## (2 points) Use package `ggplot2` to create one bar chart with `Annual_Mean_Volume_Growth` on the *y*-axis and each `Tree_Species` on the *x*-axis. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy-paste image files or screenshots of your histograms in *Canvas*.
+
+## (2 points) Use the `tree_data` dataset and package `ggplot2` to create a scatterplot with `Nitrogen_Dose` on the *x*-axis and `Annual_Mean_Volume_Growth` max on the *y*-axis. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy- paste image files or screenshots of your histograms in *Canvas*.
+
+## (2 points) Use package `ggplot2` to create a line graph with `Nitrogen_Dose` max on the *x*-axis and `Annual_Mean_Volume_Growth` on the y-axis. There should be one line for each `Tree_Species` and lines should be different colors. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy-paste image files or screenshots of your histograms in Canvas.
+
+## (BONUS +1 point possible) Putting together what you learned, create a scatterplot from the `tree_data` dataset in which `Nitrogen_Dose` is on the x-axis, `Annual_Mean_Volume_growth` is on the y-axis, and points are grouped and colored by `Tree_Species`. What do you notice about the graph?
+
+## (BONUS +1 point possible) In the code used for the previous question, add the command `geom_smooth(method = 'lm')`. Rerun the ggplot() function. What do you notice about how the graph changed?
+
+## (BONUS +1 point possible) Recreate the bar chart from the previous problem set question. Run the code again, but first add `position = "dodge"` to the `geom_bar()` function. Be sure to use a comma to separate it from other attributes. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy-paste image files or screenshots in *Canvas*. How did the graph change this time?
+
+## For the possibility of partial credit, compile your work in a single document and upload it in Canvas.
+
+# Submitting your work for the Module 3 Problem Set Assignment:
+
+You do not need to answer any questions included in the procedures sections, those are for your self-reflection only. Questions in *Canvas* may be worded slightly differently than here, usually for brevity, but with the same meaning. If there is a discrepancy in what is being asked between this document and the question form in *Canvas*, answer based on what is asked in this document. Also, please let me know as soon as possible so I can get it fixed. Submit your work on or before the due date indicated on the assignment page.
