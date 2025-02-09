@@ -12,7 +12,6 @@ book:
       - module2.qmd
       - module5.qmd
       - citations.qmd
-      - references.qmd
       
 bibliography: references.bib
 csl: the-auk.csl

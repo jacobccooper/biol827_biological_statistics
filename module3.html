@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="UNK Biology">
+
+<title>Module 3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="module3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="module3_files/libs/quarto-html/quarto.js"></script>
+<script src="module3_files/libs/quarto-html/popper.min.js"></script>
+<script src="module3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="module3_files/libs/quarto-html/anchor.min.js"></script>
+<link href="module3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="module3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="module3_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="module3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="module3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>UNK Biology </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="learning-objectives" class="level1">
+<h1>Learning objectives:</h1>
+<p>To continue gaining familiarity with the R statistical framework by using RStudio to:</p>
+<ul>
+<li><p>Calculate mean and standard deviation</p></li>
+<li><p>Calculate median, 25th and 75th percentiles, and interquartile range</p></li>
+<li><p>Use functions in <code>ggplot2</code> (part of <code>tidyverse</code>) to create boxplots, bar charts, scatterplots, and line graphs.</p></li>
+</ul>
+</section>
+<section id="packages" class="level1">
+<h1>Packages</h1>
+<p>In this problem set, we will use more functions associated with the <code>tidyverse</code> package, including a subset of this package - <code>ggplot2</code> - which is used for creating publication-quality graphs.</p>
+<p>First, we need to load this package. Remember - we installed this in a previous module, so we should not need to install in again and should be able to simply load it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+</section>
+<section id="datasets" class="level1">
+<h1>Datasets:</h1>
+<p>We will be working with two real-world datasets this week that are pulled directly from Zenodo, the European Union’s open-source repository for scientific data. We will be using the <code>read_csv</code> command from <code>tidyverse</code> to read files directly from the internet into <em>R</em>.</p>
+<section id="dataset-1" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-1">Dataset 1</h2>
+<p>Our first dataset looks at the energetic costs associated with nesting in an Arctic seabird, the <a href="https://ebird.org/species/comeid">Common Eider <em>Somateria mollissima</em></a> <span class="citation" data-cites="hoyvik_hilde_data_2017">[@hoyvik_hilde_data_2017]</span>. These data represent the open-access permanent archive of a publication based on these data <span class="citation" data-cites="hoyvik_hilde_mind_2016">[@hoyvik_hilde_mind_2016]</span>. The authors constructed artificial shelters around some nests to understand how it affected the physical condition of incubating female eiders. <em>Note</em> that I do a few steps below to (1) reduce the size of the data file and (2) rename columns to be more intuitive. All of these steps involve the <code>tidyverse</code> steps we’ve discussed before.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bird_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://zenodo.org/records/4960831/files/Data%20file.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select columns of interest</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">Nest ID</span><span class="st">`</span>, Ring, MeanT, MeanW, MeanH, <span class="st">`</span><span class="at">Differ. Days</span><span class="st">`</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>         Mass, <span class="st">`</span><span class="at">Mass recapture</span><span class="st">`</span>, CS, CSRecapture, <span class="st">`</span><span class="at">Shelter added (Y/N)</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># rename columns</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Nest_ID =</span> <span class="st">`</span><span class="at">Nest ID</span><span class="st">`</span>, <span class="at">Bird_ID =</span> Ring,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Mean_Temp =</span> MeanT, <span class="at">Mean_Wind =</span> MeanW, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">Mean_Humid =</span> MeanH, <span class="at">Days_between_captures =</span> <span class="st">`</span><span class="at">Differ. Days</span><span class="st">`</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">Mass_Initial =</span> Mass, <span class="at">Mass_Recapture =</span> <span class="st">`</span><span class="at">Mass recapture</span><span class="st">`</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">Clutch_size_initial =</span> CS, <span class="at">Clutch_size_recapture =</span> CSRecapture,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">Shelter_added =</span> <span class="st">`</span><span class="at">Shelter added (Y/N)</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 87 Columns: 25
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr   (4): Nest ID, Shelter added (Y/N), COMMENTS, Shelter class
+dbl  (19): Year, MeanT, MeanW, Winddir, MeanH, Date capture, Date recapture,...
+time  (2): Time deployed, Time retrieved
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+</section>
+<section id="dataset-2" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-2">Dataset 2</h2>
+<p>Our second dataset relates to the effects of nitrogen on the growth of Scots Pine and Norway Spruce <span class="citation" data-cites="jetsonen_volume_2025">[@jetsonen_volume_2025]</span>. This is a dataset related to a publication on these trees and the volume they add that came out a year prior, and represents another open-access dataset <span class="citation" data-cites="jetsonen_effects_2024">[@jetsonen_effects_2024]</span>. Like <a href="#dataset-1">dataset 1</a>, we are going to select specific columns and rename them for this assignment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tree_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://zenodo.org/records/14733005/files/N_fertilization_Finland_data.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(tree, v_incr_annual_compare, FN, Pa, Tsum, SF) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Tree_Species =</span> tree, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">Annual_Mean_Volume_Growth =</span> v_incr_annual_compare,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">Nitrogen_Dose =</span> FN, <span class="at">Mean_Annual_Precipitation =</span> Pa,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Long_term_temperature_sum =</span> Tsum, <span class="at">time_since_fertilization =</span> SF)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 165 Columns: 16
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (3): tree, location, site_type
+dbl (13): article_id, GS, GM, GN, Tsum, Pa, FN, v_incr_annual_compare, SF, G...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="procedure" class="level1">
+<h1>Procedure:</h1>
+<ol type="1">
+<li>Watch Module 3: Describing and Visualizing Data in R for a walk-through of these initial procedures.</li>
+<li>Open a new <em>R</em> script or <em>Rmarkdown</em> script in the source pane by clicking on the <code>File menu &gt; New File &gt; R Script</code> or <code>Rmarkdown</code>.</li>
+<li>If necessary, you can clear the environment and plots panes from <em>R</em>’s memory by type <code>rm(list=ls())</code> in the code pane and then hitting <code>CTRL</code> + <code>L</code> to clear the coding pane’s text. Alternatively, this can be accomplished by clicking the broom icon at the top of both of these panes and clear the console by clicking on <code>Editmenu &gt; Clear Console</code>.</li>
+<li>Set your working directory and import both datasets. Review Modules 1 and 2 procedures, if necessary, for a reminder of how to complete these tasks.</li>
+</ol>
+<ul>
+<li>For these procedures and video, <a href="#dataset-1">dataset 1</a> was imported as a dataframe object named <code>bird_data</code>, and <a href="#dataset-2">dataset 2</a> as a dataframe object named <code>tree_data</code>.</li>
+</ul>
+<p>Descriptive statistics refers to simple calculations that summarize or describe a given variable. Measures of central tendency commonly used are the mean (i.e., average) and median (i.e, 50th percentile). Corresponding measures of spread are standard deviation (accompanying the mean) and interquartile range or 25th and 75th percentiles (accompanying the median).</p>
+<section id="section-a.-calculate-mean-and-standard-deviation" class="level2">
+<h2 class="anchored" data-anchor-id="section-a.-calculate-mean-and-standard-deviation">Section A. Calculate mean and standard deviation</h2>
+<ol start="5" type="1">
+<li>Create a new column for the difference in mass as a percent of the birds’ initial mass using the command <code>mutate</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>bird_data <span class="ot">&lt;-</span> bird_data <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Percent_mass_change =</span> (Mass_Recapture <span class="sc">-</span> Mass_Initial)<span class="sc">/</span>Mass_Initial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>Calculate the mean and standard deviation of the <code>Percent_mass_change</code> variable separately for whether the nest was or was not sheltered (<code>Shelter_added</code>; <code>Y</code> or <code>N</code>). First, we will calculate these “by hand” using the following equations:</li>
+</ol>
+<p><span class="math display">\[
+\bar{x}=\frac{\Sigma_1^n x}{n}
+\]</span></p>
+<p><span class="math display">\[
+s^2 = \frac{\Sigma_i^n (x_i - \bar{x})^2}{n}
+\]</span></p>
+<p>In order to do this, we will need to write a <code>function</code>. A <code>function</code> is a specific <em>R</em> command that creates a pipeline for some sort of input data.</p>
+<p>In writing these functions, it’s important to know that we can perform subtraction, multiplication, and other mathematical functions across multiple values as once. For example, if we want to know what <span class="math inline">\(1\)</span> through <span class="math inline">\(10\)</span> all <span class="math inline">\(-5.5\)</span> are equal, we can do the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># denote multiple numbers with :</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>x <span class="sc">-</span> <span class="fl">5.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] -4.5 -3.5 -2.5 -1.5 -0.5  0.5  1.5  2.5  3.5  4.5</code></pre>
+</div>
+</div>
+<p>We can write our own functions in <em>R</em> that will perform these functions as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>our_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get sum of input</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  sum_x <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate length of input</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate mean</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  xbar <span class="ot">&lt;-</span> sum_x<span class="sc">/</span>n</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return mean to console</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># necessary for saving outside function</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(xbar)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>our_sd <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># need to calculate mean first!</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># copied from above</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get sum of input</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  sum_x <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate length of input</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate mean</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  xbar <span class="ot">&lt;-</span> sum_x<span class="sc">/</span>n</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate deviants</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  deviants <span class="ot">&lt;-</span> x <span class="sc">-</span> xbar</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  deviants_sq <span class="ot">&lt;-</span> deviants<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  our_variance <span class="ot">&lt;-</span> <span class="fu">sum</span>(deviants_sq)<span class="sc">/</span>n</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  our_sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(our_variance)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return answer</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(our_sd)</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="7" type="1">
+<li>Remember, we can use <code>select</code> to get a specific set of data from a <code>dataframe</code> in <em>R</em>. I will calculate these metrics for one set of variables here:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter data</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>no_shelter_change <span class="ot">&lt;-</span> bird_data <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get non-sheltered birds</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Shelter_added <span class="sc">==</span> <span class="st">"N"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># extract data of interest ONLY</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>no_shelter_mass_change <span class="ot">&lt;-</span> no_shelter_change<span class="sc">$</span>Percent_mass_change</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># view first few values</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.1914894 -0.1958763 -0.1978022 -0.1956522 -0.2234043 -0.2134831</code></pre>
+</div>
+</div>
+<ol start="8" type="1">
+<li>Now that we have our data subsetted, we can calculate “by hand”.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">our_mean</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.2068213</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">our_sd</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.02416277</code></pre>
+</div>
+</div>
+<ol start="8" type="1">
+<li>Now, calculate the following for individuals <em>with</em> shelters. Your answers should be as follows (I have hidden my subsetting code):</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">our_mean</span>(shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.1957889</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">our_sd</span>(shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0223379</code></pre>
+</div>
+</div>
+<ol start="9" type="1">
+<li>Now, let’s compare our answers to those calculated by <em>R</em>. These values may differ slightly based on rounding in <em>R</em>, but should be very close. Remember - you can use the same objects that we used before if they are still stored in your memory!</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.2068213</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.02435685</code></pre>
+</div>
+</div>
+<ol start="10" type="1">
+<li>Now, we want to run <code>pastecs</code> command <code>stat.desc</code> on part of the dataframe (for example, the mass change with a shelter).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use library to load package</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this may not be shown in future modules!</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'pastecs'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:dplyr':
+
+    first, last</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:tidyr':
+
+    extract</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stat.desc, rounded to 2 decimals</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stat.desc</span>(shelter_mass_change) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     nbr.val     nbr.null       nbr.na          min          max        range 
+       24.00         0.00         0.00        -0.24        -0.13         0.10 
+         sum       median         mean      SE.mean CI.mean.0.95          var 
+       -4.70        -0.19        -0.20         0.00         0.01         0.00 
+     std.dev     coef.var 
+        0.02        -0.12 </code></pre>
+</div>
+</div>
+<p>Run the command on the mass data for birds with no shelter as well.</p>
+<ol start="11" type="1">
+<li>Compare the weight data for birds with a shelter and without a shelter. What similarities do you see? What differences do you see?</li>
+</ol>
+</section>
+<section id="section-b.-calculate-the-median-50th-25th-and-75th-percentiles-and-interquartile-range-iqr" class="level2">
+<h2 class="anchored" data-anchor-id="section-b.-calculate-the-median-50th-25th-and-75th-percentiles-and-interquartile-range-iqr">Section B. Calculate the median (50th), 25th, and 75th percentiles and interquartile range (IQR)</h2>
+<p>Quantiles are a way of looking at the response value at which a given percentage of observations are captured. The most common quantiles are the 25th, 50th, and 75th percentiles. This specific set of quantiles are also called quartiles: 1st quartile (25th percentile), median (50th percentile), and 3rd quartile (75th percentile). The interquartile range (IQR) measures spread representing the middle 50% of observations; that is, 25% of observations fall below the 25th percentile and 25% of observations are above the 75th percentile.</p>
+<p>The following examples will use the data for mass change with no shelter, which I called <code>no_shelter_mass_change</code> above.</p>
+<ol start="11" type="1">
+<li>First, we will be calculating the median. We can do this with the command <code>median</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.2065217</code></pre>
+</div>
+</div>
+<ol start="12" type="1">
+<li>Next, we will calculate the quantiles. We will do this using <code>quantile</code>, but note that this function includes multiple methods.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        0%        25%        50%        75%       100% 
+-0.2841530 -0.2201997 -0.2065217 -0.1886298 -0.1609195 </code></pre>
+</div>
+</div>
+<p>If we want a specific quantile, we can state it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(no_shelter_mass_change,</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">probs =</span> <span class="fl">0.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       25% 
+-0.2201997 </code></pre>
+</div>
+</div>
+<p>There are nine different algorithms for calculating quantiles. We will be using <code>type 6</code> in this class, which must be specified.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(no_shelter_mass_change,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">probs =</span> <span class="fl">0.25</span>,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">type =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       25% 
+-0.2216495 </code></pre>
+</div>
+</div>
+<p><strong><em>Note</em></strong> that the above 25th percentile is different that the default method! Specifying a type is important, and <strong>in this class use type 6</strong>. Type 6 is the same method as is used by <em>Minitab</em> and <em>SPSS</em>, other statistical softwares, and calculates the quantiles using the equation <span class="math inline">\(p_k = \frac{k}{n+1}\)</span>.</p>
+<p>Just like other functions, we can save a quantile as an object as well.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>q25 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(no_shelter_mass_change,</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">probs =</span> <span class="fl">0.25</span>, </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">type =</span> <span class="dv">6</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>q25 <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  25% 
+-0.22 </code></pre>
+</div>
+</div>
+<ol start="13" type="1">
+<li>Calculate the interquartile range. We can do this using the command <code>IQR</code>. The interquartile range is the distance between the 25th and 75th percentiles.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0315699</code></pre>
+</div>
+</div>
+<p><strong><em>NOTE</em></strong> that just like <code>quantile</code>, <code>IQR</code> has different methods and we should use type 6.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(no_shelter_mass_change,</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.03341419</code></pre>
+</div>
+</div>
+</section>
+<section id="section-c.-use-ggplot-to-create-plots" class="level2">
+<h2 class="anchored" data-anchor-id="section-c.-use-ggplot-to-create-plots">Section C. Use <code>ggplot</code> to create plots</h2>
+<p>There are multiple ways to graph data in <em>R</em>, to illustrate we can compare histograms produced using the <code>hist()</code> function and using function <code>ggplot()</code> in the <code>ggplot2</code> package. <strong><em>NOTE</em></strong> that if you have <code>tidyverse</code> installed, as you should already, that you already have <code>ggplot2</code> installed! The <code>tidyverse</code> is actually a set of multiple packages that all get installed together, of which <code>ggplot2</code> is one major component.</p>
+<p>Here, we are going to be focusing on <code>geom_histogram</code> which creates histograms, but there are also ways to produce many other plots, including <code>geom_boxplot</code>, <code>geom_bar</code>, <code>geom_point</code>, and <code>geom_line</code>.</p>
+<ol start="14" type="1">
+<li>For each mass group, with and without shelter, we will create a histogram using <code>hist</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(no_shelter_mass_change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="15" type="1">
+<li>Now, we want to create a histogram in <code>ggplot2</code>. This is a powerful plotting function, which can be confusing but will create publication quality plots with the right commands. Several parts of the general function syntax are outlined below.</li>
+</ol>
+<ul>
+<li><p><code>ggplot</code>: the base function, in which you list the dataframe to be plotted. <strong>The input must be an object with class <code>dataframe</code></strong>.</p>
+<ul>
+<li><code>aes</code>: subargument, where aesthetics are listed.</li>
+</ul></li>
+<li><p><code>geom_histogram</code>: create a histogram</p></li>
+<li><p><code>xlab</code>: x axis label</p></li>
+<li><p><code>ylab</code>: y axis label</p></li>
+<li><p><code>ggtitle</code>: main plot title</p></li>
+<li><p>Themes can be used to change plot appearance and make it more readable.</p>
+<ul>
+<li><p><code>theme_classic</code>: nice plain plot with no background.</p></li>
+<li><p><code>theme_minimal</code>: clean background but with major grid lines shown.</p></li>
+</ul></li>
+</ul>
+<p>First, we will create a basic histogram, and then we will make a “fancy” histogram.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bird_data,</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Percent_mass_change)) <span class="sc">+</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Above, we can see that this histogram is pretty similar to a regular histogram from the <code>hist</code> command. Now, let’s make it look nicer, and even parse out birds based on other variables. The point of each command is noted below. You may see an error about bin widths; this can be ignored.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define dataset to plot</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bird_data,</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>       <span class="co"># described aesthetics; thing to plot</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Percent_mass_change,</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>           <span class="co"># thing to group by</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>           <span class="co"># for stratified studies</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> Shelter_added)) <span class="sc">+</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create a histogram</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># alpha sets transparency level</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, </span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># identity prevents "stacking" of bars</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># change x label</span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Percent mass change"</span>) <span class="sc">+</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># change y label</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of individuals"</span>) <span class="sc">+</span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># change legend label</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Shelter added"</span>) <span class="sc">+</span></span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># set minimal theme</span></span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can also do a density histogram by changing <code>geom_histogram</code> to <code>geom_density</code>. A density histogram is <em>smoothed</em> and shows the <em>percent</em> of individuals in each category.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bird_data,</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Percent_mass_change,</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> Shelter_added)) <span class="sc">+</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Change to density </span><span class="al">###</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, </span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Change to percent from count </span><span class="al">###</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Percent mass change"</span>) <span class="sc">+</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Percent of individuals"</span>) <span class="sc">+</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Shelter added"</span>) <span class="sc">+</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="16" type="1">
+<li>Above, we saw an error related to “bin count”. We can set bin count manually by using the argument <code>bins</code> in <code>geom_histogram</code>. Below is an example that is the same as shown previously but with <code>bins = 6</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define dataset to plot</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bird_data,</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>       <span class="co"># described aesthetics; thing to plot</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Percent_mass_change,</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>           <span class="co"># thing to group by</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>           <span class="co"># for stratified studies</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> Shelter_added)) <span class="sc">+</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create a histogram</span></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># alpha sets transparency level</span></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, </span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># identity prevents "stacking" of bars</span></span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position =</span> <span class="st">"identity"</span>,</span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># set bin number</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># change x label</span></span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Percent mass change"</span>) <span class="sc">+</span></span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># change y label</span></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of individuals"</span>) <span class="sc">+</span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># change legend label</span></span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Shelter added"</span>) <span class="sc">+</span></span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># set minimal theme</span></span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-e.-create-a-boxplot-using-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="section-e.-create-a-boxplot-using-ggplot2">Section E. Create a boxplot using <code>ggplot2</code></h2>
+<ol start="17" type="1">
+<li>Create a boxplot for the column <code>Percent_mass_change</code> from the <code>bird_data</code> dataset. The syntax for this is:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="do">### THIS CODE WILL NOT RUN </span><span class="al">###</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of set up</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataframe, </span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>       <span class="co"># x is grouping variable; like condition</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>       <span class="co"># X is not needed, can be blank</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> x.variable,</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>           <span class="co"># variable to "boxplot"</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> y.variable)) <span class="sc">+</span></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you enter your correctly, you should get an output like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If you add a grouping variable, like <code>x = Shelter_added</code> to the <code>aes</code> argument, you will get something like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bird_data, </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Shelter_added, </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Percent_mass_change)) <span class="sc">+</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="18" type="1">
+<li>Like we did before, try changing the names of the axes, and try adding the command <code>fill = Shelter_added</code> to see what happens. Remember, you can also add things like <code>theme_minimal()</code> to make the plot “tidier”. See previous plots for formatting. Here is an example with axes renamed and fill added.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-f.-create-a-bar-chart-using-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="section-f.-create-a-bar-chart-using-ggplot2">Section F. Create a bar chart using <code>ggplot2</code></h2>
+<ol start="19" type="1">
+<li>Next, we are going to create a bar chart for the <code>Percent_mass_change</code> data. This is fundamentally similar to the above plots, but instead of <code>geom_boxplot</code> or any other argument, we will do the following:</li>
+</ol>
+<ul>
+<li><code>geom_bar(stat = "summary", fun = "mean")</code></li>
+</ul>
+<p>You should get a plot that looks like the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bird_data, </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Shelter_added,</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> Percent_mass_change,</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> Shelter_added)) <span class="sc">+</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"summary"</span>,</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">fun =</span> <span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-g.-create-an-xy-scatterplot-using-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="section-g.-create-an-xy-scatterplot-using-ggplot2">Section G. Create an XY scatterplot using <code>ggplot2</code></h2>
+<ol start="20" type="1">
+<li>For this scatterplot, we are going to compare <code>Mass_Initial</code> to <code>Mass_Recapture</code>. We will use <code>Mass_Initial</code> as our independent variable (<code>x</code>), and <code>Mass_Recapture</code> as our dependent variable (<code>y</code>).</li>
+</ol>
+<ul>
+<li><p>For this plot, we are using <code>geom_point</code>, which calls a scatterplot of points.</p></li>
+<li><p>For this one, we are also going to show how sections of this plot can be saved as objects.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(bird_data, </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> Mass_Initial,</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> Mass_Recapture))</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">geom_point</span>()</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>a3 <span class="ot">&lt;-</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Try these two combinations to see how you can add things in piecemeal:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="sc">+</span> a2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="sc">+</span> a2 <span class="sc">+</span> a3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can also split this up by color as well. All we have to do is change the <code>a1</code> object above to include <code>colour</code>, which is similar to <code>fill</code> but better suited for this plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(bird_data,</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> Mass_Initial,</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> Mass_Recapture,</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">colour =</span> Shelter_added))</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>a1 <span class="sc">+</span> a2 <span class="sc">+</span> a3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="section-h.-create-a-line-graph-using-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="section-h.-create-a-line-graph-using-ggplot2">Section H. Create a line graph using <code>ggplot2</code></h2>
+<ol start="21" type="1">
+<li>Next, we will create a line graph. This is essentially the same as the previous steps, except we will be using the argument <code>geom_line</code> to create our plot.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bird_data, <span class="fu">aes</span>(<span class="at">x =</span> Mass_Initial,</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> Mass_Recapture,</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">colour =</span> Shelter_added)) <span class="sc">+</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module3_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong><em>Notice</em></strong> that this is a fairly messy plot, but it still works and does a good job of illustrating how these things relate. We can still change the axes labels with commands like <code>xlab</code> and <code>ylab</code>.</p>
+</section>
+</section>
+<section id="problem-set-3" class="level1">
+<h1>Problem Set 3</h1>
+<p>The following questions pertain to the <code>tree_data</code> object.</p>
+<section id="points-using-the-tree_data-object-split-the-dataset-up-by-tree_species-and-calculate-the-mean-standard-deviation-median-and-interquartile-range-for-the-column-annual_mean_volume_growth.-refer-to-section-a.-calculate-mean-and-standard-deviation-and-section-b.-calculate-the-median-50th-25th-and-75th-percentiles-and-interquartile-range-iqr-for-more-information-on-performing-these-analyses." class="level2">
+<h2 class="anchored" data-anchor-id="points-using-the-tree_data-object-split-the-dataset-up-by-tree_species-and-calculate-the-mean-standard-deviation-median-and-interquartile-range-for-the-column-annual_mean_volume_growth.-refer-to-section-a.-calculate-mean-and-standard-deviation-and-section-b.-calculate-the-median-50th-25th-and-75th-percentiles-and-interquartile-range-iqr-for-more-information-on-performing-these-analyses.">(4 points) Using the <code>tree_data</code> object, split the dataset up by <code>Tree_Species</code> and Calculate the mean, standard deviation, median, and interquartile range for the column <code>Annual_Mean_Volume_Growth</code>. Refer to <a href="#section-a.-calculate-mean-and-standard-deviation">Section A. Calculate mean and standard deviation</a> and <a href="#section-b.-calculate-the-median-50th-25th-and-75th-percentiles-and-interquartile-range-iqr">Section B. Calculate the median (50th), 25th, and 75th percentiles and interquartile range (IQR)</a> for more information on performing these analyses.</h2>
+<p><strong><em>HINT</em></strong>: There are only two “species” of tree - <code>pine</code> and <code>spruce</code>.</p>
+<p><strong>REMEMBER</strong> - answers should be rounded to the nearest tenth (0.1) as this is the precision of the available data.</p>
+<table class="caption-top table">
+<caption>Example table for organizing results.</caption>
+<thead>
+<tr class="header">
+<th>Measurement</th>
+<th><code>pine</code></th>
+<th><code>spruce</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Standard Deviation</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Interquartile Range</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="points-use-package-ggplot2-to-create-one-boxplot-with-annual_mean_volume_growth-on-the-y-axis-and-each-tree_species-on-the-x-axis.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy-paste-image-files-or-screenshots-of-your-histograms-in-canvas." class="level2">
+<h2 class="anchored" data-anchor-id="points-use-package-ggplot2-to-create-one-boxplot-with-annual_mean_volume_growth-on-the-y-axis-and-each-tree_species-on-the-x-axis.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy-paste-image-files-or-screenshots-of-your-histograms-in-canvas.">(2 points) Use package <code>ggplot2</code> to create one boxplot with <code>Annual_Mean_Volume_Growth</code> on the <em>y</em>-axis and each <code>Tree_Species</code> on the <em>x</em>-axis. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy-paste image files or screenshots of your histograms in <em>Canvas</em>.</h2>
+</section>
+<section id="points-use-package-ggplot2-to-create-one-bar-chart-with-annual_mean_volume_growth-on-the-y-axis-and-each-tree_species-on-the-x-axis.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy-paste-image-files-or-screenshots-of-your-histograms-in-canvas." class="level2">
+<h2 class="anchored" data-anchor-id="points-use-package-ggplot2-to-create-one-bar-chart-with-annual_mean_volume_growth-on-the-y-axis-and-each-tree_species-on-the-x-axis.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy-paste-image-files-or-screenshots-of-your-histograms-in-canvas.">(2 points) Use package <code>ggplot2</code> to create one bar chart with <code>Annual_Mean_Volume_Growth</code> on the <em>y</em>-axis and each <code>Tree_Species</code> on the <em>x</em>-axis. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy-paste image files or screenshots of your histograms in <em>Canvas</em>.</h2>
+</section>
+<section id="points-use-the-tree_data-dataset-and-package-ggplot2-to-create-a-scatterplot-with-nitrogen_dose-on-the-x-axis-and-annual_mean_volume_growth-max-on-the-y-axis.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy--paste-image-files-or-screenshots-of-your-histograms-in-canvas." class="level2">
+<h2 class="anchored" data-anchor-id="points-use-the-tree_data-dataset-and-package-ggplot2-to-create-a-scatterplot-with-nitrogen_dose-on-the-x-axis-and-annual_mean_volume_growth-max-on-the-y-axis.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy--paste-image-files-or-screenshots-of-your-histograms-in-canvas.">(2 points) Use the <code>tree_data</code> dataset and package <code>ggplot2</code> to create a scatterplot with <code>Nitrogen_Dose</code> on the <em>x</em>-axis and <code>Annual_Mean_Volume_Growth</code> max on the <em>y</em>-axis. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy- paste image files or screenshots of your histograms in <em>Canvas</em>.</h2>
+</section>
+<section id="points-use-package-ggplot2-to-create-a-line-graph-with-nitrogen_dose-max-on-the-x-axis-and-annual_mean_volume_growth-on-the-y-axis.-there-should-be-one-line-for-each-tree_species-and-lines-should-be-different-colors.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy-paste-image-files-or-screenshots-of-your-histograms-in-canvas." class="level2">
+<h2 class="anchored" data-anchor-id="points-use-package-ggplot2-to-create-a-line-graph-with-nitrogen_dose-max-on-the-x-axis-and-annual_mean_volume_growth-on-the-y-axis.-there-should-be-one-line-for-each-tree_species-and-lines-should-be-different-colors.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy-paste-image-files-or-screenshots-of-your-histograms-in-canvas.">(2 points) Use package <code>ggplot2</code> to create a line graph with <code>Nitrogen_Dose</code> max on the <em>x</em>-axis and <code>Annual_Mean_Volume_Growth</code> on the y-axis. There should be one line for each <code>Tree_Species</code> and lines should be different colors. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy-paste image files or screenshots of your histograms in Canvas.</h2>
+</section>
+<section id="bonus-1-point-possible-putting-together-what-you-learned-create-a-scatterplot-from-the-tree_data-dataset-in-which-nitrogen_dose-is-on-the-x-axis-annual_mean_volume_growth-is-on-the-y-axis-and-points-are-grouped-and-colored-by-tree_species.-what-do-you-notice-about-the-graph" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-1-point-possible-putting-together-what-you-learned-create-a-scatterplot-from-the-tree_data-dataset-in-which-nitrogen_dose-is-on-the-x-axis-annual_mean_volume_growth-is-on-the-y-axis-and-points-are-grouped-and-colored-by-tree_species.-what-do-you-notice-about-the-graph">(BONUS +1 point possible) Putting together what you learned, create a scatterplot from the <code>tree_data</code> dataset in which <code>Nitrogen_Dose</code> is on the x-axis, <code>Annual_Mean_Volume_growth</code> is on the y-axis, and points are grouped and colored by <code>Tree_Species</code>. What do you notice about the graph?</h2>
+</section>
+<section id="bonus-1-point-possible-in-the-code-used-for-the-previous-question-add-the-command-geom_smoothmethod-lm.-rerun-the-ggplot-function.-what-do-you-notice-about-how-the-graph-changed" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-1-point-possible-in-the-code-used-for-the-previous-question-add-the-command-geom_smoothmethod-lm.-rerun-the-ggplot-function.-what-do-you-notice-about-how-the-graph-changed">(BONUS +1 point possible) In the code used for the previous question, add the command <code>geom_smooth(method = 'lm')</code>. Rerun the ggplot() function. What do you notice about how the graph changed?</h2>
+</section>
+<section id="bonus-1-point-possible-recreate-the-bar-chart-from-the-previous-problem-set-question.-run-the-code-again-but-first-add-position-dodge-to-the-geom_bar-function.-be-sure-to-use-a-comma-to-separate-it-from-other-attributes.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy-paste-image-files-or-screenshots-in-canvas.-how-did-the-graph-change-this-time" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-1-point-possible-recreate-the-bar-chart-from-the-previous-problem-set-question.-run-the-code-again-but-first-add-position-dodge-to-the-geom_bar-function.-be-sure-to-use-a-comma-to-separate-it-from-other-attributes.-be-sure-axes-are-clearly-labeled-and-include-units-of-measure-if-applicable.-you-will-be-asked-to-insert-or-copy-paste-image-files-or-screenshots-in-canvas.-how-did-the-graph-change-this-time">(BONUS +1 point possible) Recreate the bar chart from the previous problem set question. Run the code again, but first add <code>position = "dodge"</code> to the <code>geom_bar()</code> function. Be sure to use a comma to separate it from other attributes. Be sure axes are clearly labeled and include units of measure if applicable. You will be asked to insert or copy-paste image files or screenshots in <em>Canvas</em>. How did the graph change this time?</h2>
+</section>
+<section id="for-the-possibility-of-partial-credit-compile-your-work-in-a-single-document-and-upload-it-in-canvas." class="level2">
+<h2 class="anchored" data-anchor-id="for-the-possibility-of-partial-credit-compile-your-work-in-a-single-document-and-upload-it-in-canvas.">For the possibility of partial credit, compile your work in a single document and upload it in Canvas.</h2>
+</section>
+</section>
+<section id="submitting-your-work-for-the-module-3-problem-set-assignment" class="level1">
+<h1>Submitting your work for the Module 3 Problem Set Assignment:</h1>
+<p>You do not need to answer any questions included in the procedures sections, those are for your self-reflection only. Questions in <em>Canvas</em> may be worded slightly differently than here, usually for brevity, but with the same meaning. If there is a discrepancy in what is being asked between this document and the question form in <em>Canvas</em>, answer based on what is asked in this document. Also, please let me know as soon as possible so I can get it fixed. Submit your work on or before the due date indicated on the assignment page.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

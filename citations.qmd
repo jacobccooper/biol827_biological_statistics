@@ -3,7 +3,7 @@ title: "Rounding and Citations"
 author: "Dr. Jacob C. Cooper"
 ---
 
-# Rounding
+## Rounding
 
 In this class, we are going to follow basic rounding rules formatting used for some publications. Specifically, this is based on the guidelines for *Ornithology* (formerly, *The Auk*) and *Ornithology Applications* (formerly, *The Condor*).
 
@@ -25,7 +25,7 @@ x %>%
   round(2)
 ```
 
-# Citations
+## Citations
 
 Citations need to include:
 
