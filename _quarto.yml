@@ -8,11 +8,6 @@ book:
   date: "20 January 2025"
   chapters:
       - index.qmd
-      - module1.qmd
-      - module2.qmd
-      - module5.qmd
-      - citations.qmd
-      
 bibliography: references.bib
 csl: the-auk.csl
 
